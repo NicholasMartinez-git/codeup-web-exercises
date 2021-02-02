@@ -6,37 +6,35 @@ alert("Welcome to my Website!");
 var favoriteColor = prompt("What is your favorite color");
 alert("Great, " + favoriteColor + " is my favorite too!");
 
-function rentMovies() {
-    var littleMermaid = prompt("How long will you be renting Little Mermaid?");
-    console.log(littleMermaid);
-    var brotherBear = prompt("How long will you be renting Brother Bear?");
-    console.log(brotherBear);
-    var hercules = prompt("How long will you be renting Hercules?");
-    console.log(hercules);
-    var priceMovie = 3.00;
-    var pay = (littleMermaid * priceMovie) + (brotherBear * priceMovie) + (hercules * priceMovie);
-    console.log(pay);
-    alert("Thank you! Your total amount is " + pay.toFixed(2));
-}
-console.log(rentMovies());
+
+var littleMermaid = parseInt(prompt("How long will you be renting Little Mermaid?"));
+console.log(littleMermaid);
+var brotherBear = parseInt(prompt("How long will you be renting Brother Bear?"));
+console.log(brotherBear);
+var hercules = parseInt(prompt("How long will you be renting Hercules?"));
+console.log(hercules);
+var priceMovie = 3.00;
+var pay = (littleMermaid + brotherBear + hercules) * 3;
+console.log(pay);
+alert("Thank you! Your total amount is " + pay.toFixed(2));
+
 
 alert("Thank you for shopping with us");
 
-function weeklyPayment() {
-    var googleHourlyPay = 400.00;
-    var amazonHourlyPay = 380.00;
-    var facebookHourlyPay = 350.00;
-    var googleHoursWorked = prompt("How many hours did you work for google?");
-    console.log(googleHoursWorked);
-    var amazonHoursWorked = prompt("How many hours did you work for Amazon?");
-    console.log(amazonHoursWorked);
-    var facebookHoursWorked = prompt("How many hours did you work for Facebook?");
-    console.log(facebookHoursWorked);
-    var pay = (googleHoursWorked * googleHourlyPay) + (amazonHoursWorked * amazonHourlyPay) + (facebookHoursWorked * facebookHourlyPay)
-    console.log(pay);
-    alert("Your payment for this week is " + pay.toFixed(2));
-}
-console.log(weeklyPayment());
+
+var googleHourlyPay = 400.00;
+var amazonHourlyPay = 380.00;
+var facebookHourlyPay = 350.00;
+var googleHoursWorked = Number(prompt("How many hours did you work for google?"));
+console.log(googleHoursWorked);
+var amazonHoursWorked = Number(prompt("How many hours did you work for Amazon?"));
+console.log(amazonHoursWorked);
+var facebookHoursWorked = Number(prompt("How many hours did you work for Facebook?"));
+console.log(facebookHoursWorked);
+var totalPay = (googleHoursWorked * googleHourlyPay) + (amazonHoursWorked * amazonHourlyPay) + (facebookHoursWorked * facebookHourlyPay)
+console.log(totalPay);
+alert("Your total payment for this week is $" + totalPay.toFixed(2));
+
 
 var name = prompt("What is your name?");
 console.log("Hello, " + name);
