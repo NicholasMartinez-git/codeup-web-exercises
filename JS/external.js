@@ -8,12 +8,15 @@ alert("Great, " + favoriteColor + " is my favorite too!");
 
 function rentMovies() {
     var littleMermaid = prompt("How long will you be renting Little Mermaid?");
+    console.log(littleMermaid);
     var brotherBear = prompt("How long will you be renting Brother Bear?");
+    console.log(brotherBear);
     var hercules = prompt("How long will you be renting Hercules?");
+    console.log(hercules);
     var priceMovie = 3.00;
     var pay = (littleMermaid * priceMovie) + (brotherBear * priceMovie) + (hercules * priceMovie);
-    var result = confirm("Thank you! Your total amount is " + pay.toFixed(2) + " (Press Ok to continue)");
-    return result;
+    console.log(pay);
+    alert("Thank you! Your total amount is " + pay.toFixed(2));
 }
 console.log(rentMovies());
 
@@ -34,3 +37,13 @@ function weeklyPayment() {
     alert("Your payment for this week is " + pay.toFixed(2));
 }
 console.log(weeklyPayment());
+
+var name = prompt("What is your name?");
+console.log("Hello, " + name);
+alert("Please answer the following questions to determine if you can enroll into this class.");
+
+var isNotFull = confirm("Does the class counter show 29/29");
+console.log(isNotFull);
+var notScheduleConflict = confirm("Does the time slot for this class overlap any already enrolled class?");
+console.log(notScheduleConflict);
+alert("Enrollment answer: " + (isNotFull && notScheduleConflict) + " (If true, you may enroll. If you false, you may not enroll.)")
