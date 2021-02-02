@@ -46,4 +46,16 @@ var isNotFull = confirm("Does the class counter show 29/29");
 console.log(isNotFull);
 var notScheduleConflict = confirm("Does the time slot for this class overlap any already enrolled class?");
 console.log(notScheduleConflict);
-alert("Enrollment answer: " + (isNotFull && notScheduleConflict) + " (If true, you may enroll. If you false, you may not enroll.)")
+alert("Enrollment answer: " + (isNotFull && notScheduleConflict) + " \n(If true, you may enroll. If you false, you may not enroll.)")
+// Question 3: B4
+var premium = confirm("Are you a premium member?");
+console.log(premium);
+var product = prompt("How much of the product are you buying?");
+console.log(product);
+var productNotExpired = confirm("Is the product not expired?");
+console.log(productNotExpired);
+var productOffer = ((product >= 2) && productNotExpired);
+console.log(productOffer);
+var premiumOffer = ((product >= 1) && productNotExpired);
+console.log(premiumOffer);
+alert("Qualification for Non-Premium Member: " + productOffer + " \nQualification for Premium Member: " + premiumOffer + " \n(If true, you qualify. If you false, you don't qualify.)")
