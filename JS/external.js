@@ -54,7 +54,7 @@ alert("Enrollment answer: " + (isNotFull && notScheduleConflict) + " \n(If true,
 // Exercise 2 => Question 3 => Bulletin 4 (previous lesson)
 var premium = confirm("Are you a premium member?");
 console.log(premium);
-var product = prompt("How much of the product are you buying?");
+var product = parseInt(prompt("How much of the product are you buying?"));
 console.log(product);
 var productNotExpired = confirm("Is the product not expired?");
 console.log(productNotExpired);
