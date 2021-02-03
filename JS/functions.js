@@ -54,17 +54,12 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 function isTwo(num) {
-    if (num != 2) {
-        console.log(true);
-    } else {
-        console.log(false);
-    }
-    return num;
+    return num === 2;
 }
-isTwo(1);
-isTwo(2);
-isTwo(3);
-isTwo(random);
+console.log(isTwo(1));
+console.log(isTwo(2));
+console.log(isTwo(3));
+console.log(isTwo(random));
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -76,6 +71,13 @@ isTwo(random);
  * > calculateTip(0.25, 25.50) // returns 6.375
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
+function calculateTip(tipPercentage, bill) {
+    var formulateTipPercentage = tipPercentage / 100;
+    return formulateTipPercentage * bill;
+}
+console.log(calculateTip(20, 20.00));
+console.log(calculateTip(25, 25.50));
+console.log(calculateTip(15, 33.42));
 
 /**
  * TODO:
