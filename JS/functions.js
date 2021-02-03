@@ -1,5 +1,6 @@
 "use strict";
 
+// Exercise (1)
 /**
  * TODO:
  * Create a function called 'sayHello' that takes a parameter 'name'.
@@ -13,6 +14,7 @@ function sayHello(name){
 }
 sayHello("codeup!");
 
+// Exercise (2)
 /**
  * TODO:
  * Call the function 'sayHello' and pass your name as a string literal argument.
@@ -23,6 +25,7 @@ sayHello("codeup!");
 var helloMessage = sayHello("Nicholas");
 console.log(helloMessage);
 
+// Exercise (3)
 /**
  * TODO:
  * Store your name as a string in a variable named 'myName', and pass that
@@ -36,6 +39,8 @@ sayHello(myName);
 // and stores it in a variable named random
 var random = Math.floor((Math.random() * 3) + 1);
 
+
+// Exercise (4)
 /**
  * TODO:
  * Create a function called 'isTwo' that takes a number as a parameter.
@@ -60,6 +65,8 @@ console.log(isTwo(1));
 console.log(isTwo(2));
 console.log(isTwo(3));
 console.log(isTwo(random));
+
+// Exercise (5) & (6) are combined
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -72,20 +79,29 @@ console.log(isTwo(random));
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 function calculateTip(tipPercentage, bill) {
-    var formulateTipPercentage = tipPercentage / 100;
-    return formulateTipPercentage * bill;
+    var percentFormula = (tipPercentage / 100);
+    console.log(percentFormula);
+    return percentFormula * bill;
 }
 console.log(calculateTip(20, 20.00));
 console.log(calculateTip(25, 25.50));
 console.log(calculateTip(15, 33.42));
 
+//Exercise (6)
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
+var askTipPercentage = Number(prompt("What percentage would you like to tip?")).toFixed(2);
+console.log(askTipPercentage);
+var askBill = Number(prompt("What is the total amount of the bill?")).toFixed(2);
+console.log(askBill);
+var showTipAmount = alert("Rquested tip amount is $" + calculateTip(askTipPercentage, askBill));
+console.log(showTipAmount);
 
+// Exercise (7)
 /**
  * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
