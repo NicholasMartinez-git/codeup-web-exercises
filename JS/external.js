@@ -54,15 +54,15 @@ alert("Enrollment answer: " + (isNotFull && notScheduleConflict) + " \n(If true,
 // Exercise 2 => Question 3 => Bulletin 4 (previous lesson)
 var premium = confirm("Are you a premium member?");
 console.log(premium);
-var product = parseInt(prompt("How much of the product are you buying?"));
+var product = (prompt("How much of the product are you buying?"));
 console.log(product);
-var productNotExpired = confirm("Is the product not expired?");
-console.log(productNotExpired);
-var productOffer = ((product >= 2) && productNotExpired); // Checks if the user qualifies
+var productOfferValid = confirm("Is the product offer valid?");
+console.log(productOfferValid);
+var productOffer = ((product >= 2) && productOfferValid); // Checks if the user qualifies
 console.log(productOffer);
-var premiumOffer = ((product >= 1) && productNotExpired); // Checks if the user qualifies as a premium member
+var premiumOffer = (premium && ((product >= 1) && productOfferValid)); // Checks if the user qualifies as a premium member
 console.log(premiumOffer);
-alert("Qualification for Non-Premium Member: " + productOffer + " \nQualification for Premium Member: " + premiumOffer + " \n(If true, you qualify. If you false, you don't qualify.)")
+alert("Qualification for offer: " + (productOffer || premiumOffer));
 
 
 
