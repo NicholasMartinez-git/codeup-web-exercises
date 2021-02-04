@@ -3,3 +3,11 @@
 // Exercise 1
 var onMarsRightNow = false;
 console.log(onMarsRightNow);
+
+// Exercise 2
+var fruits = ["mango", "banana", "guava", "kiwi", "strawberry"];
+console.log(fruits);
+
+// Exercise 3
+var vegetables = ["eggplant", "broccoli", "carrot", "cauliflower", "zucchini"];
+console.log(vegetables);
