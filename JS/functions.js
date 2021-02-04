@@ -70,7 +70,7 @@
     console.log(isTwo(3));
     console.log(isTwo(random));
 
-// Exercise (5) & (6) are combined
+// Exercise (5)
     /**
      * TODO:
      * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -136,3 +136,10 @@
 
     applyDiscount(originalPrice, discountPercentage);
 })();
+
+function calculateTip(tipPercentage, bill) {
+    var percentFormula = (tipPercentage / 100);
+    console.log(percentFormula);
+    return percentFormula * bill;
+}
+
