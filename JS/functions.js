@@ -12,10 +12,10 @@
      * > sayHello("codeup") // returns "Hello, codeup!"
      */
     function sayHello(name) {
-        return console.log("Hello, " + name);
+        return "Hello, " + name;
     }
 
-    sayHello("codeup!");
+    console.log(sayHello("codeup!"));
 
 // Exercise (2)
     /**
@@ -36,7 +36,7 @@
      * console.
      */
     var myName = "Nicholas";
-    sayHello(myName);
+    console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
