@@ -98,8 +98,7 @@ var askTipPercentage = Number(prompt("What percentage would you like to tip?")).
 console.log(askTipPercentage);
 var askBill = Number(prompt("What is the total amount of the bill?")).toFixed(2);
 console.log(askBill);
-var showTipAmount = alert("Rquested tip amount is $" + calculateTip(askTipPercentage, askBill));
-console.log(showTipAmount);
+alert("Requested tip amount is $" + (calculateTip(askTipPercentage, askBill)).toFixed(2));
 
 // Exercise (7)
 /**
@@ -111,8 +110,21 @@ console.log(showTipAmount);
  *
  * Example:
  * > var originalPrice = 100;
- * > var dicountPercent = .2; // 20%
- * > applyDiscount(originalPrice, dicountPercent) // 80
+ * > var discountPercent = .2; // 20%
+ * > applyDiscount(originalPrice, discountPercent) // 80
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+var originalPrice = (Number(prompt("What is the cost of the item you wish to purchase?"))).toFixed(2);
+console.log(originalPrice);
+var discountPercentage = (Number(prompt("What is the percentage of the discount you wish to apply to your purchase?"))).toFixed(2);
+console.log(discountPercentage);
+function applyDiscount(originalPrice, discountPercentage) {
+    var percentageFormula = (discountPercentage / 100)
+    var discountAmount = originalPrice * percentageFormula;
+    console.log(discountAmount);
+    var result = originalPrice - discountAmount;
+    console.log(result);
+    return result;
+}
+applyDiscount(originalPrice, discountPercentage);
