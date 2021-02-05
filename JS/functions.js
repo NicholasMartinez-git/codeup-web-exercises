@@ -1,4 +1,3 @@
-// Use Strict can be used inside or outside of IFFE
 (function () {
     "use strict";
 
