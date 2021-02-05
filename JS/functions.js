@@ -137,9 +137,3 @@
     applyDiscount(originalPrice, discountPercentage);
 })();
 
-function calculateTip(tipPercentage, bill) {
-    var percentFormula = (tipPercentage / 100);
-    console.log(percentFormula);
-    return percentFormula * bill;
-}
-
