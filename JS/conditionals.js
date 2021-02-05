@@ -121,6 +121,31 @@
      * Test your function by passing it various values and checking for the expected
      * return value.
      */
+    function calculateTotal(luckyNumber, totalAmount) {
+        var discountTotal = 0;
+
+        if (luckyNumber === 0) {
+            discountTotal = totalAmount * 0;
+        } else if (luckyNumber === 1) {
+            discountTotal = totalAmount * (.10);
+        } else if (luckyNumber === 2) {
+            discountTotal = totalAmount * (.25);
+        } else if (luckyNumber === 3) {
+            discountTotal = totalAmount * (.35);
+        } else if (luckyNumber === 4) {
+            discountTotal = totalAmount * (.50);
+        } else if (luckyNumber === 5) {
+            discountTotal = totalAmount * 1;
+        }
+
+        var discountedPrice = totalAmount - discountTotal;
+
+        return discountedPrice;
+    }
+
+    console.log(calculateTotal(0, 100));
+    console.log(calculateTotal(4, 100));
+    console.log(calculateTotal(5, 100));
 
     // Q(2) Exercise 2
     /**
