@@ -28,3 +28,6 @@ vegetables.sort();
 fruits.reverse(fruits.sort());
 
 // Exercise 10
+
+
+// Exercise 11
