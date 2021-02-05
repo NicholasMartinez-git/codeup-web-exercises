@@ -60,12 +60,33 @@
      * Pass the `randomColor` variable to your function and console.log the results.
      * You should see a different message every time you refresh the page
      */
+    analyzeColor(randomColor);
 
     // Q(1) Exercise 3
     /**
      * TODO:
      * Refactor your above function to use a switch-case statement
      */
+    function refactoredAnalyzeColor(x) {
+        switch (x) {
+            case "red":
+                return ("Strawberries are the color red.");
+            case "orange":
+                return ("Orange is the color of a carrot.");
+            case "yellow":
+                return ("Sunflowers are yellow.");
+            case "green":
+                return ("Healthy grass is the color green.");
+            case "blue":
+                return ("Blue is the color of the sky");
+            case "indigo":
+                return ("Surprisingly blueberries are listed as the color indigo.");
+            case "violet":
+                return ("Grapes are predominantly the color violet.");
+            default:
+                return ("I don't know anything about the color " + x);
+        }
+    }
 
     // Q(1) Exercise 4
     /**
@@ -74,6 +95,9 @@
      * user to your `analyzeColor` function. Alert the return value from your
      * function to show it to the user.
      */
+    var askedColor = prompt("Type a color, any color?");
+    refactoredAnalyzeColor(askedColor);
+    alert(refactoredAnalyzeColor(askedColor));
 
     /* ########################################################################## */
 
