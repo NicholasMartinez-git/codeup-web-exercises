@@ -4,6 +4,7 @@
 
     /* ########################################################################## */
 
+    // Q(1) Exercise 1
     /**
      * TODO:
      * Create a function named `analyzeColor` that accepts a string that is a color
@@ -52,17 +53,21 @@
 //                  will contain a different color every time the page loads)
     var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
     var randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+    // Q(1) Exercise 2
     /**
      * TODO:
      * Pass the `randomColor` variable to your function and console.log the results.
      * You should see a different message every time you refresh the page
      */
 
+    // Q(1) Exercise 3
     /**
      * TODO:
      * Refactor your above function to use a switch-case statement
      */
 
+    // Q(1) Exercise 4
     /**
      * TODO:
      * Prompt the user for a color when the page loads, and pass the input from the
@@ -72,6 +77,7 @@
 
     /* ########################################################################## */
 
+    // Q(2) Exercise 1
     /**
      * TODO:
      * Suppose there's a promotion in Walmart, each customer is given a randomly
@@ -92,6 +98,7 @@
      * return value.
      */
 
+    // Q(2) Exercise 2
     /**
      * TODO:
      * Uncomment the line below to generate a random number between 0 and 6.
@@ -102,6 +109,7 @@
 // Generate a random number between 0 and 6
 // var luckyNumber = Math.floor(Math.random() * 6);
 
+    // Q(2) Exercise 3
     /**
      * TODO:
      * Write some JavaScript that uses a `confirm` dialog to ask the user if they
