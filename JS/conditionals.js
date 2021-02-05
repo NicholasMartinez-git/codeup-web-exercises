@@ -21,6 +21,29 @@
      * Test your function by passing various string literals to it and
      * console.logging the function's return value
      */
+    function analyzeColor(str) {
+        if (str === "red") {
+            console.log("Strawberries are the color red.");
+        } else if (str === "orange") {
+            console.log("Orange is the color of a carrot.");
+        } else if (str === "yellow") {
+            console.log("Sunflowers are yellow.")
+        } else if (str === "green") {
+            console.log("Healthy grass is the color green.");
+        } else if (str === "blue") {
+            console.log("Blue is the color of the sky");
+        } else if (str === "indigo") {
+            console.log("Surprisingly blueberries are listed as the color indigo.");
+        } else if (str === "violet") {
+            console.log("Grapes are predominantly the color violet.");
+        } else {
+            console.log("I don't know anything about the color " + str);
+        }
+    }
+
+    analyzeColor("red");
+    analyzeColor("blue");
+    analyzeColor("cyan");
 
 // Don't change the next two lines!
 // These lines create two variables for you:
