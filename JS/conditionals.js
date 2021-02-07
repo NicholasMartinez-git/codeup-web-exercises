@@ -160,7 +160,7 @@
     var randomLuckyNumber = Math.floor(Math.random() * 6);
     console.log(randomLuckyNumber);
     var askedForTotal = Number(prompt("What is your total bill?")).toFixed(2);
-    alert("Your lucky number was " + randomLuckyNumber + "\nand your your new amount after the discount is $" + calculateTotal(randomLuckyNumber, askedForTotal).toFixed(2));
+    alert("Your lucky number was " + randomLuckyNumber + "\nand your new amount after the discount is $" + calculateTotal(randomLuckyNumber, askedForTotal).toFixed(2));
 
     // Q(2) Exercise 3
     /**
@@ -182,6 +182,16 @@
     var askConfirm = confirm("Would you like to enter a number?");
     if (askConfirm === true) {
         var num = parseInt(prompt("Please enter number: "));
-        if (num )
+        if (num % 2 === 0 && num > 0) {
+            alert("The number you entered is even.");
+            alert("The number plus 100 is " + (num + 100));
+            alert("The number is positive.");
+        } else if (num % 2 !== 0 && num < 0) {
+            alert("The number you entered is odd.");
+            alert("The number plus 100 is " + (num + 100));
+            alert("The number is negative.");
+        } else {
+            alert("Sorry! What you entered was not a number.");
+        }
     }
 })();
