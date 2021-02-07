@@ -179,4 +179,9 @@
      * Can you refactor your code to use functions?
      * HINT: The way we prompt for a value could be improved
      */
+    var askConfirm = confirm("Would you like to enter a number?");
+    if (askConfirm === true) {
+        var num = parseInt(prompt("Please enter number: "));
+        if (num )
+    }
 })();
