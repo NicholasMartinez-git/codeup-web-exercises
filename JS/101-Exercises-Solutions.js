@@ -41,3 +41,13 @@ function isPositive(number) {
 }
 
 // Exercise 13
+function isNegative(number) {
+    return number < 0;
+}
+
+// Exercise 14
+function isOdd(number) {
+    return number % 2 !== 0;
+}
+
+// Exercise 15
