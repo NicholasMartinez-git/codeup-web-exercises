@@ -67,8 +67,8 @@
      * TODO:
      * Refactor your above function to use a switch-case statement
      */
-    function refactoredAnalyzeColor(x) {
-        switch (x) {
+    function refactoredAnalyzeColor(str) {
+        switch (str) {
             case "red":
                 return ("Strawberries are the color red.");
             case "orange":
@@ -84,7 +84,7 @@
             case "violet":
                 return ("Grapes are predominantly the color violet.");
             default:
-                return ("I don't know anything about the color " + x);
+                return ("I don't know anything about the color " + str);
         }
     }
 
@@ -225,9 +225,9 @@
 
     var newAskConfirm = confirm("Would you like to enter a number?");
     if (newAskConfirm) {
-        var num = parseInt(prompt("Please enter number: "));
-        if (num) {
-            return isPositive(num) + isEven(num) + alert("The number plus 100 is " + (num + 100));
+        var number = parseInt(prompt("Please enter number: "));
+        if (number) {
+            return isPositive(number) + isEven(number) + alert("The number plus 100 is " + (number + 100));
         } else {
             alert("Sorry, what you entered was not a number. \nPlease try again!");
         }

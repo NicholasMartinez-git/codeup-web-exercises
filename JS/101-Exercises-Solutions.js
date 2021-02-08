@@ -28,4 +28,4 @@ vegetables.sort();
 fruits.reverse(fruits.sort());
 
 // Exercise 10
-
+var fruitsAndVeggies = fruits.concat(vegetables);
