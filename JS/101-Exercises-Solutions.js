@@ -59,3 +59,13 @@ function isEven(number) {
 function identity(input) {
     return input;
 }
+
+// Exercise 17
+function isPositiveOdd(number) {
+    return ((number % 2 !== 0) && number > 0);
+}
+
+// Exercise 18
+function isPositiveEven(number) {
+    return ((number % 2 === 0) && number > 0);
+}
