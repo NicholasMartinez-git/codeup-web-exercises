@@ -51,3 +51,11 @@ function isOdd(number) {
 }
 
 // Exercise 15
+function isEven(number) {
+    return number % 2 === 0;
+}
+
+// Exercise 16
+function identity(input) {
+    return input;
+}
