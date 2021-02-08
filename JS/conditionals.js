@@ -180,18 +180,58 @@
      * HINT: The way we prompt for a value could be improved
      */
     var askConfirm = confirm("Would you like to enter a number?");
-    if (askConfirm === true) {
+    if (askConfirm) {
         var num = parseInt(prompt("Please enter number: "));
         if (num % 2 === 0 && num > 0) {
-            alert("The number you entered is even.");
+            alert("The number is even.");
+            alert("The number plus 100 is " + (num + 100));
+            alert("The number is positive.");
+        } else if (num % 2 === 0 && num < 0) {
+            alert("The number is even.");
+            alert("The number plus 100 is " + (num + 100));
+            alert("The number is negative.");
+        } else if (num % 2 !== 0 && num > 0) {
+            alert("The number is odd.");
             alert("The number plus 100 is " + (num + 100));
             alert("The number is positive.");
         } else if (num % 2 !== 0 && num < 0) {
-            alert("The number you entered is odd.");
+            alert("The number is odd.");
             alert("The number plus 100 is " + (num + 100));
             alert("The number is negative.");
         } else {
-            alert("Sorry! What you entered was not a number.");
+            alert("Sorry! What you entered was not a number. \nPlease try again!");
         }
+    } else {
+        alert("Maybe next time.");
+    }
+
+// The code below is refactored to include functions so you can see the difference from the code above.
+
+    function isEven(num) {
+        if (num % 2 === 0) {
+            return alert("The number is even.");
+        } else {
+            return alert("The number is odd.");
+        }
+    }
+
+    function isPositive(num) {
+        if (num > 0) {
+            return alert("The number is positive.");
+        } else {
+            return alert("The number is negative.");
+        }
+    }
+
+    var newAskConfirm = confirm("Would you like to enter a number?");
+    if (newAskConfirm) {
+        var num = parseInt(prompt("Please enter number: "));
+        if (num) {
+            return isPositive(num) + isEven(num) + alert("The number plus 100 is " + (num + 100));
+        } else {
+            alert("Sorry, what you entered was not a number. \nPlease try again!");
+        }
+    } else {
+        alert("Maybe next time.");
     }
 })();
