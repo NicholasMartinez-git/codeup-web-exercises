@@ -29,3 +29,15 @@ fruits.reverse(fruits.sort());
 
 // Exercise 10
 var fruitsAndVeggies = fruits.concat(vegetables);
+
+// Exercise 11
+function addOne(number) {
+    return number + 1;
+}
+
+// Exercise 12
+function isPositive(number) {
+    return number > 0;
+}
+
+// Exercise 13
