@@ -69,3 +69,15 @@ function isPositiveOdd(number) {
 function isPositiveEven(number) {
     return ((number % 2 === 0) && number > 0);
 }
+
+// Exercise 19
+function isNegativeOdd(number) {
+    return ((number % 2 !== 0) && number < 0);
+}
+
+// Exercise 20
+function isNegativeEven(number) {
+    return ((number % 2 === 0) && number < 0);
+}
+
+// Exercise 21
