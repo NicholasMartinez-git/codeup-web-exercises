@@ -91,3 +91,13 @@ function double(number) {
 }
 
 // Exercise 23
+function triple(number) {
+    return number * 3;
+}
+
+// Exercise 24
+function reverseSign(number) {
+    return number * (-1);
+}
+
+// Exercise 25
