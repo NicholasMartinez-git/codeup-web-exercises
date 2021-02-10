@@ -109,3 +109,13 @@ function absoluteValue(number) {
 function isMultipleOfThree(number) {
     return (number % 3 === 0);
 }
+
+// Exercise 27
+function isMultipleOfFive(number) {
+    return (number % 5 === 0);
+}
+
+// Exercise 28
+function isMultipleOfBothThreeAndFive(number) {
+    return (number % 5 === 0) && (number % 3 === 0);
+}
