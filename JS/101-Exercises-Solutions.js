@@ -101,3 +101,11 @@ function reverseSign(number) {
 }
 
 // Exercise 25
+function absoluteValue(number) {
+    return Math.abs(number);
+}
+
+// Exercise 26
+function isMultipleOfThree(number) {
+    return (number % 3 === 0);
+}
