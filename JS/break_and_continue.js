@@ -33,7 +33,17 @@
     // Here is an odd number: 45
     // Here is an odd number: 47
     // Here is an odd number: 49
-    function f() {
+    function breakAndContinue(input) {
+        // prompting user for number between 1 and 50
+        var askNum = parseInt(prompt("Please enter an odd number between 1 and 50: "));
+        if ((askNum < 1 || askNum > 50) || isNaN(askNum)) {
+            alert("Sorry! Invalid number please try again!");
+            breakAndContinue();
+        } else {
+            alert("Your number is " + askNum);
+        }
+
 
     }
+    breakAndContinue();
 })();
