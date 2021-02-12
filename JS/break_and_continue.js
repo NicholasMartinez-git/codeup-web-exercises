@@ -33,17 +33,38 @@
     // Here is an odd number: 45
     // Here is an odd number: 47
     // Here is an odd number: 49
+
     function breakAndContinue(input) {
         // prompting user for number between 1 and 50
-        var askNum = parseInt(prompt("Please enter an odd number between 1 and 50: "));
-        if ((askNum < 1 || askNum > 50) || isNaN(askNum)) {
-            alert("Sorry! Invalid number please try again!");
-            breakAndContinue();
-        } else {
-            alert("Your number is " + askNum);
-        }
+        // var askNum = parseInt(prompt("Please enter an odd number between 1 and 50: "));
 
+        // recursive function method. Was initially  my first choice for making this "loop" to work.
+        // if ((askNum < 1 || askNum > 50) || isNaN(askNum)) {
+        //     alert("Sorry! Invalid number please try again!");
+        //     breakAndContinue();
+        // } else {
+        //     alert("Your number is " + askNum);
+        // }
 
+        // This is alternative method using a for loop.
+        // for (true; true; true) {
+        //     var askNum = parseInt(prompt("Please enter an odd number between 1 and 50: "));
+        //     if (isBetweenANumber1And50(askNum)|| askNum % 2 === 0) {
+        //         break;
+        //     }
+        // }
+
+        // This would have been the best choice for this problem
+        do {
+            var askNum = parseInt(prompt("Please enter an odd number between 1 and 50: "));
+        } while (isBetweenANumber1And50(askNum)|| askNum % 2 === 0);
     }
     breakAndContinue();
+
+    // This is a pure function to call upon for making the code above look prettier.
+    function isBetweenANumber1And50(input) {
+       return ((input < 1 || input > 50) || isNaN(input))
+    }
+
+    // Create a method is a number between which takes in 3 inputs, (min/max) or (floor/ceiling) and value to check.
 })();
