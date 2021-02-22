@@ -129,3 +129,13 @@ function square(number) {
 function add(num1, num2) {
     return num1 + num2;
 }
+
+// Exercise 31
+function cube(number) {
+    return Math.pow(number, 3);
+}
+
+// Exercise 32
+function squareRoot(number) {
+    return Math.pow(number, .5);
+}
