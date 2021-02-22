@@ -169,3 +169,16 @@ function remainder(num1, num2) {
 function sumOfSquares(num1, num2) {
     return Math.pow(num1, 2) + Math.pow(num2, 2);
 }
+
+// Exercise 39
+function timesTwoPlusThree(number) {
+    return (number * 2) + 3;
+}
+
+// Exercise 40
+function areaOfRectangle(num1, num2) {
+    var length = num1;
+    var width = num2;
+
+    return length * width;
+}
