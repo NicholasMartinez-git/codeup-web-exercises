@@ -22,7 +22,7 @@
     // 65536
 
     function doubleUp(input) {
-        var i = 1;
+        var i = 2;
         while (i < 65536) {
             i = i * 2
             console.log(i)
