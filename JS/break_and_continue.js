@@ -34,50 +34,82 @@
     // Here is an odd number: 47
     // Here is an odd number: 49
 
-    function breakAndContinue(input) {
-        // prompting user for number between 1 and 50
-        // var askNum = parseInt(prompt("Please enter an odd number between 1 and 50: "));
-        //
-        // // recursive function method. Was initially  my first choice for making this "loop" to work. INCOMPLETE!
-        // if (isBetweenANumber1And50AndOdd(askNum)) {
-        //     alert("Sorry! Invalid number please try again!");
-        //     breakAndContinue();
-        // } else {
-        //     console.log("Number to skip is: " + askNum);
-        // }
+    // function breakAndContinue(input) {
+    //     // prompting user for number between 1 and 50
+    //     // var askNum = parseInt(prompt("Please enter an odd number between 1 and 50: "));
+    //     //
+    //     // // recursive function method. Was initially  my first choice for making this "loop" to work. INCOMPLETE!
+    //     // if (isBetweenANumber1And50AndOdd(askNum)) {
+    //     //     alert("Sorry! Invalid number please try again!");
+    //     //     breakAndContinue();
+    //     // } else {
+    //     //     console.log("Number to skip is: " + askNum);
+    //     // }
+    //
+    //     // This is alternative method using a for loop. INCOMPLETE!
+    //     // for (true; true; true) {
+    //     //     var askNum = parseInt(prompt("Please enter an odd number between 1 and 50: "));
+    //     //     if (isBetweenANumber1And50(askNum)|| askNum % 2 === 0) {
+    //     //         break;
+    //     //     }
+    //     // }
+    //
+    //     // This would have been the best choice for this problem
+    //     // Completed version
+    //     do {
+    //         var askNum = parseInt(prompt("Please enter an odd number between 1 and 50: "));
+    //
+    //     } while (isBetweenANumber1And50AndOdd(askNum));
+    //     console.log("Number to skip is: " + askNum);
+    //
+    //     for (var i = 1; (i >= 1 && i <= 50); i += 2) {
+    //         if (i === askNum) {
+    //             console.log("Yikes! Skipping Number: " + i);
+    //         } else {
+    //             console.log("Here is an odd number: " + i);
+    //         }
+    //     }
+    // }
+    //
+    // // This is a pure function to call upon for making the code above look prettier.
+    // function isBetweenANumber1And50AndOdd(input) {
+    //    return (((input < 1 || input > 50) || isNaN(input)) || input % 2 === 0)
+    // }
+    //
+    // // Calling my function to run the code inside it.
+    // breakAndContinue();
 
-        // This is alternative method using a for loop. INCOMPLETE!
-        // for (true; true; true) {
-        //     var askNum = parseInt(prompt("Please enter an odd number between 1 and 50: "));
-        //     if (isBetweenANumber1And50(askNum)|| askNum % 2 === 0) {
-        //         break;
-        //     }
-        // }
+//  Is the version the professor suggested for exercise accuracy
+    var askNum = parseInt(prompt("Please enter an odd number between 1 and 50: "));
 
-        // This would have been the best choice for this problem
-        // Completed version
-        do {
-            var askNum = parseInt(prompt("Please enter an odd number between 1 and 50: "));
 
-        } while (isBetweenANumber1And50AndOdd(askNum));
-        console.log("Number to skip is: " + askNum);
+    function isNumberInRange(num) {
+        return num > 1 && num <= 50;
+    }
 
-        for (var i = 1; (i >= 1 && i <= 50); i += 2) {
-            if (i === askNum) {
-                console.log("Yikes! Skipping Number: " + i);
-            } else {
-                console.log("Here is an odd number: " + i);
-            }
+    function isNumberEven(num) {
+        return num % 2 === 0;
+    }
+
+    while (true) {
+        if (!isNumberEven(askNum) && isNumberInRange(askNum)) {
+            break;
         }
-    }
 
-    // This is a pure function to call upon for making the code above look prettier.
-    function isBetweenANumber1And50AndOdd(input) {
-       return (((input < 1 || input > 50) || isNaN(input)) || input % 2 === 0)
-    }
+        askNum = parseInt(prompt("Please enter an odd number between 1 and 50: "));
 
-    // Calling my function to run the code inside it.
-    breakAndContinue();
+    }
+    console.log("Number to skip is: " + askNum);
+
+    for (var i = 1; (i >= 1 && i <= 50); i += 2) {
+        if (i === askNum) {
+            console.log("Yikes! Skipping Number: " + askNum);
+            continue;
+        }
+
+        console.log("Here is an odd number: " + i);
+
+    }
 
 
     // Create a method is a number between which takes in 3 inputs, (min/max) or (floor/ceiling) and value to check.

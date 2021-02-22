@@ -64,7 +64,7 @@
         for (var i = 1; i <= 9; i++) {
             var emptyString = ""; //store the number concatenated for the number i
             for (var j = 1; j <= i; j++) {
-                emptyString += i.toString();
+                emptyString += i;
             }
             console.log(emptyString);
         }
