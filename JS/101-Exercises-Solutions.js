@@ -159,3 +159,13 @@ function divide(num1, num2) {
 function quotient(num1, num2) {
     return Math.floor(num1/num2);
 }
+
+// Exercise 37
+function remainder(num1, num2) {
+    return num1 % num2;
+}
+
+// Exercise 38
+function sumOfSquares(num1, num2) {
+    return Math.pow(num1, 2) + Math.pow(num2, 2);
+}
