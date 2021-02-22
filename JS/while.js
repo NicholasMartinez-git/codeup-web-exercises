@@ -43,8 +43,9 @@
     // Cannot sell you 6 cones I only have 3...  // If there are not enough cones
     // Yay! I sold them all! // If there are no more cone
 
-    function iceCreamSeller(input) {
+    function iceCreamSeller() {
         var allCones = Math.floor(Math.random() * 50) + 50; // All the cones in inventory
+        console.log("You have " + allCones + " cones to sell today!!");
 
         // Show the amount of cones left after each customer buys there amount until there is no more inventory left.
         do {
