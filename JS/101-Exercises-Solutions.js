@@ -149,3 +149,13 @@ function subtract(num1, num2) {
 function multiply(num1, num2) {
     return num1 * num2;
 }
+
+// Exercise 35
+function divide(num1, num2) {
+    return (num1 / num2);
+}
+
+// Exercise 36
+function quotient(num1, num2) {
+    return Math.floor(num1/num2);
+}
