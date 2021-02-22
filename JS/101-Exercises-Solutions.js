@@ -119,3 +119,13 @@ function isMultipleOfFive(number) {
 function isMultipleOfBothThreeAndFive(number) {
     return (number % 5 === 0) && (number % 3 === 0);
 }
+
+// Exercise 29
+function square(number) {
+    return number * number;
+}
+
+// Exercise 30
+function add(num1, num2) {
+    return num1 + num2;
+}

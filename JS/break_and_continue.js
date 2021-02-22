@@ -38,7 +38,7 @@
         // prompting user for number between 1 and 50
         // var askNum = parseInt(prompt("Please enter an odd number between 1 and 50: "));
         //
-        // // recursive function method. Was initially  my first choice for making this "loop" to work.
+        // // recursive function method. Was initially  my first choice for making this "loop" to work. INCOMPLETE!
         // if (isBetweenANumber1And50AndOdd(askNum)) {
         //     alert("Sorry! Invalid number please try again!");
         //     breakAndContinue();
@@ -46,7 +46,7 @@
         //     console.log("Number to skip is: " + askNum);
         // }
 
-        // This is alternative method using a for loop.
+        // This is alternative method using a for loop. INCOMPLETE!
         // for (true; true; true) {
         //     var askNum = parseInt(prompt("Please enter an odd number between 1 and 50: "));
         //     if (isBetweenANumber1And50(askNum)|| askNum % 2 === 0) {
