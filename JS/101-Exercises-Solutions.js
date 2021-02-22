@@ -139,3 +139,13 @@ function cube(number) {
 function squareRoot(number) {
     return Math.pow(number, .5);
 }
+
+// Exercise 33
+function subtract(num1, num2) {
+    return num1 - num2;
+}
+
+// Exercise 34
+function multiply(num1, num2) {
+    return num1 * num2;
+}
