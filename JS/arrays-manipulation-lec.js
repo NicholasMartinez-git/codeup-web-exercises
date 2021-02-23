@@ -8,6 +8,11 @@
 // ];
 
 // TODO: given the above array how do we log each element to the console?
+// console.log(pies[0]);
+//
+// pies.forEach(function (pie) {
+//     console.log(pie);
+// });
 
 /**
  * ===== Concepts to cover:
@@ -59,21 +64,23 @@
 
 // add element to beginning
 
-    // pies.unshift('blueberry'); // returns the new total number of items in the array
+    // pies.unshift("lemon"); // returns the new total number of items in the array
     // console.log(pies);
 
 // add element to end
 
-    // pies.push('chocolate'); // again returns the new total number of items in the array
+    // pies.push("pecan"); // again returns the new total number of items in the array
+    // console.log(pies);
 
 // remove element from the front of an array
 
     // pies.shift();
+    // console.log(pies);
 
 // remove an element from the end of an array
 
     // pies.pop();
-
+    // console.log(pies);
 
 // ============================= Searching
 
@@ -109,19 +116,29 @@
    // one argument only will return a copy from the starting index to the end of the array
  */
 
-// var pies = [
-//     "apple",
-//     "cherry",
-//     "key lime",
-//     "huckleberry",
-//     "rhubarb",
-//     "key lime"
-// ];
+var pies = [
+    "apple",        // 0
+    "cherry",       // 1
+    "key lime",     // 2
+    "huckleberry",  // 3
+    "rhubarb",      // 4
+    "key lime"      // 5
+];
 
 // TODO GROUP: find various combinations of output
+console.log(pies.slice(1, 3));
 
-// TODO EXERCISE: create a function that takes in an array of pies baked and return the 3 most recently baked pies
+// TODO EXERCISE: create a function that takes in an array of pies baked and return the 3 most recently baked pies (last 3 elements within the array)
+// Hard code function. Non-dynamic
+// function lastThree(array) {
+//     return array.slice(3);
+// }
+// console.log(lastThree(pies));
 
+function lastThree(array) {
+    return array.slice(array.length - 3); // Dynamic method to take any array and output the last 3 elements for any length of an array
+}
+console.log(lastThree(pies));
 
 
 // ============================= Reversing
