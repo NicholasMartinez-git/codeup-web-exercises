@@ -135,31 +135,51 @@ console.log(returnLastElement(daysOfTheWeek)); //sunday
 *************************************************************** */
 //  TODO TOGETHER: Log each element of the shapes array
 // TODO TOGETHER: Using a for loop, iterate through the shapes array and log each shape
-
-
-
+for (var s = 0; s < shapes.length; s++) {
+    console.log(shapes[s]);
+}
 
 // TODO TOGETHER: Alert "that's my favorite shape!" when your favorite shape is iterated over in the loop.
-
+for (var favShape = 0; favShape < shapes.length; favShape++) {
+    if (shapes[favShape] === "triangle") {
+        alert(shapes[favShape] + " is my favorite shape!")
+    }
+}
 
 
 // TODO: What happens if we change var i = 1? or var i = 2;
-// TODO: What are benefits of using loops to iterate?
-// TODO: How does the loop know when to stop iterating?
+// We change the starting position of the array.
 
+// TODO: What are benefits of using loops to iterate?
+// Less code. Easy access of arrays. Aesthetically pleasing code.
+
+// TODO: How does the loop know when to stop iterating?
+// Within the for loop we set a condition for the loop to end at a certain point. Typically it looks like this (i < 100) or (i < shapes.length).
 
 // TODO: Using a for loop, iterate through the instructors array and console.log each instructor
-
+for (var instructorIndex = 0; instructorIndex < instructors.length; instructorIndex++) {
+    console.log(instructors[instructorIndex]);
+}
 
 // TODO: Using a for loop, iterate through the daysOfTheWeek array and console.log each day of the week
-
+for (var day = 0; day < daysOfTheWeek.length; day++) {
+    console.log(daysOfTheWeek[day]);
+}
 
 // TODO: Using a for loop, iterate through the favoriteFoods array and console.log each favorite food
-
+for (var favFood = 0; favFood < favoriteFoods.length; favFood++) {
+    console.log(favoriteFoods[favFood]);
+}
 
 
 // TODO: Refactoring the instructor loop, alert "hey, I know <INSTRUCTOR NAME HERE>" if you have had class with that instructor. If you have not had class with that instructor, alert "I haven't had class with <INSTRUCTOR NAME HERE> yet!"
-
+for (var i = 0; i < instructors.length; i++) {
+    if (instructors[i] === "douglas" || instructors[i] === "kenneth" || instructors[i] === "samuel") {
+        alert("Hey, I know " + instructors[i] + "!");
+    } else {
+        alert("I haven't had class with " + instructors[i] + " yet!");
+    }
+}
 
 
 /* ***************************************************************
