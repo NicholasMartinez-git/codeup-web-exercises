@@ -47,11 +47,22 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+    shoppers.forEach(function (shopper) {
+        var discount = .12;
+        var amountBefore = shopper.amount;
+        var amountAfter = amountBefore - (discount * amountBefore);
+        if (amountBefore >= 200) {
+            console.log("Hello, " + shopper.name + "! " + "You've spent over " + "$" + amountBefore.toFixed(2) + " so you receive a %12 discount! You're new amount after the discount comes out to be " + "$" + amountAfter.toFixed(2));
+        } else {
+            console.log("Hello, " + shopper.name + "! " + "You're total is $" + amountBefore.toFixed(2))
+        }
+    });
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
