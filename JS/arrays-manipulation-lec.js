@@ -116,17 +116,17 @@
    // one argument only will return a copy from the starting index to the end of the array
  */
 
-var pies = [
-    "apple",        // 0
-    "cherry",       // 1
-    "key lime",     // 2
-    "huckleberry",  // 3
-    "rhubarb",      // 4
-    "key lime"      // 5
-];
+// var pies = [
+//     "apple",        // 0
+//     "cherry",       // 1
+//     "key lime",     // 2
+//     "huckleberry",  // 3
+//     "rhubarb",      // 4
+//     "key lime"      // 5
+// ];
 
 // TODO GROUP: find various combinations of output
-console.log(pies.slice(1, 3));
+// console.log(pies.slice(1, 3));
 
 // TODO EXERCISE: create a function that takes in an array of pies baked and return the 3 most recently baked pies (last 3 elements within the array)
 // Hard code function. Non-dynamic
@@ -134,11 +134,12 @@ console.log(pies.slice(1, 3));
 //     return array.slice(3);
 // }
 // console.log(lastThree(pies));
-
-function lastThree(array) {
-    return array.slice(array.length - 3); // Dynamic method to take any array and output the last 3 elements for any length of an array
-}
-console.log(lastThree(pies));
+//
+// Proper way to create the function
+// function lastThree(array) {
+//     return array.slice(array.length - 3); // Dynamic method to take any array and output the last 3 elements for any length of an array
+// }
+// console.log(lastThree(pies));
 
 
 // ============================= Reversing
@@ -204,28 +205,26 @@ console.log(lastThree(pies));
        5125553030
 */
 
-// var phoneNumbers = '210-555-2020\n230-555-2020\n512-555-3030';
-//
-// function cleanPhoneNumbers(phoneNums) {
-//
-// }
-//
-// var cleanNumsArr = cleanPhoneNumbers(phoneNumbers);
-//
-// for (var i = 0; i < cleanNumsArr.length; i += 1) {
-//     console.log(cleanNumsArr[i]);
-// }
+var phoneNumbers = '210-555-2020\n230-555-2020\n512-555-3030';
 
+function cleanPhoneNumbers(phoneNums) {
+    var output = [];
 
+    // fill output up with the phone numbers
+    var phoneNumbersArray = phoneNums.split("\n");
+    phoneNumbersArray.forEach(function (phoneNum) {
+        var phoneNumArray = phoneNum.split("-");
+        output.push(phoneNumArray.join(""));
+    });
 
+    return output;
+}
 
+var cleanNumsArr = cleanPhoneNumbers(phoneNumbers);
 
-
-
-
-
-
-
+for (var i = 0; i < cleanNumsArr.length; i += 1) {
+    console.log(cleanNumsArr[i]);
+}
 
 
 // ============================= (EXTRA INFO) Splicing Elements
