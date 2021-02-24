@@ -11,6 +11,13 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
+    var person = {
+        firstName: "Nicholas",
+        lastName: "Martinez"
+    };
+
+    console.log(person.firstName);
+    console.log(person.lastName);
 
     /**
      * TODO:
