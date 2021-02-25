@@ -76,6 +76,11 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+    var books = [
+        {
+
+        }
+    ]
 
     /**
      * TODO:
