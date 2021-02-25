@@ -44,9 +44,9 @@
 
 //* TODO: Create a new Object and call it 'myCar' using either way to do so shown above (object instance or object literal)
 
-var myCar = {};
-
-console.log(myCar);
+// var myCar = {};
+//
+// console.log(myCar);
 
 // That's great! But our car object doesn't have much going on, does it? There's no depth or meat to it - how can we fill our object in?
 
@@ -79,7 +79,7 @@ console.log(myCar);
 
 
 // TODO: Fill in your myCar object with properties of make, model, and year with the correct values. If you don't own a vehicle, fill in the details with your favorite vehicle.
-myCar = {
+ var myCar = {
     make: "Toyota",
     model: "4Runner",
     year: 1990
@@ -123,6 +123,7 @@ myCar = {
 // }
 
 // TODO: Add an array of features that your vehicle has!
+myCar.features = ["3 Inch Lift", "Off-Road Bumpers", "Grill Guard", "Fog Lights/ Off-Road Lights"];
 
 //What about who owns our car? That could be an object itself if we think it through - the owner has a firstName and a lastName at the very least, right?
 //Let's try nesting this object inside of our car object we've been building out
@@ -132,8 +133,14 @@ myCar = {
 // myCar.owner = carOwner;
 
 // TODO: Nest a 'carOwner' object of your own into this growing myCar object and console.log the results!
+var carOwner = {
+    firstName: "Nicholas",
+    lastName: "Martinez"
+}
 
-// console.log(myCar);
+myCar.owner = carOwner;
+
+console.log(myCar);
 
 //An object can also contain within itself a method (function). We can set it up similarly to our properties, but with a value that is the function expression
 
