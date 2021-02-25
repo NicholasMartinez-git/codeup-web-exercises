@@ -64,6 +64,7 @@
         }
     });
 
+    let lastName;
     /** TODO:
      * Create an array of objects that represent books and store it in a
      * variable named `books`. Each object should have a title and an author
@@ -78,9 +79,44 @@
      */
     var books = [
         {
-
+            title: "The Golden Compass (Series)",
+            author: {
+                firstName: "Philip",
+                lastName: "Pullman"
+            }
+        },
+        {
+            title: "The Book Thief",
+            author: {
+                firstName: "Markus",
+                lastName: "Zusak"
+            }
+        },
+        {
+            title: "Supermarket",
+            author: {
+                firstName: "Bobby",
+                lastName: "Hall"
+            }
+        },
+        {
+            title: "The Kite Runner",
+            author: {
+                firstName: "Khaled",
+                lastName: "Hosseini"
+            }
+        },
+        {
+            title: "The Obstacle Is The Way",
+            author: {
+                firstName: "Ryan",
+                lastName: "Holiday"
+            }
         }
     ]
+    console.log(books[0].title);
+    console.log(books[0].author.firstName);
+    console.log(books[0].author.lastName);
 
     /**
      * TODO:

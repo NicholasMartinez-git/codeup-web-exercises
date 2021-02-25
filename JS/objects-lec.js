@@ -44,7 +44,9 @@
 
 //* TODO: Create a new Object and call it 'myCar' using either way to do so shown above (object instance or object literal)
 
+var myCar = {};
 
+console.log(myCar);
 
 // That's great! But our car object doesn't have much going on, does it? There's no depth or meat to it - how can we fill our object in?
 
@@ -77,6 +79,11 @@
 
 
 // TODO: Fill in your myCar object with properties of make, model, and year with the correct values. If you don't own a vehicle, fill in the details with your favorite vehicle.
+myCar = {
+    make: "Toyota",
+    model: "4Runner",
+    year: 1990
+}
 
 //For me? I'm missing the year for myCar so. .
 
