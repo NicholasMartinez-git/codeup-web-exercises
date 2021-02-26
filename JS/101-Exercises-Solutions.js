@@ -215,3 +215,5 @@ function hasVowels(value) {
     value = value.toLowerCase();
     return value.includes("a") || value.includes("e")|| value.includes("i") || value.includes("o") || value.includes("u");
 }
+
+// Exercise 45
