@@ -83,7 +83,7 @@
     make: "Toyota",
     model: "4Runner",
     year: 1990
-}
+};
 
 //For me? I'm missing the year for myCar so. .
 
@@ -136,7 +136,7 @@ myCar.features = ["3 Inch Lift", "Off-Road Bumpers", "Grill Guard", "Fog Lights/
 var carOwner = {
     firstName: "Nicholas",
     lastName: "Martinez"
-}
+};
 
 myCar.owner = carOwner;
 
@@ -186,3 +186,19 @@ console.log(myCar);
 
 //One final TODO: A bigger task - set up your own garage and add at least another vehicle into it. Log your garage array to verify it contains the cars you want - once your garage has the right cars, write a loop to access some properties or a method from them!
 
+
+var otherCar = {
+    make: "Toyota",
+    model: "Tacoma",
+    year: 2016,
+    owner: carOwner,
+};
+
+var ownGarage = [
+    myCar,
+    otherCar
+];
+
+ownGarage.forEach(function (car) {
+    console.log(car);
+});

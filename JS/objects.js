@@ -64,7 +64,6 @@
         }
     });
 
-    let lastName;
     /** TODO:
      * Create an array of objects that represent books and store it in a
      * variable named `books`. Each object should have a title and an author
@@ -142,6 +141,13 @@
      *      ---
      *      ...
      */
+    console.log(books.length);
+    for (var i = 0; i < books.length; i++) {
+        console.log("Book # " + (i + 1));
+        console.log("Title: " + books[i].title);
+        console.log("Author: " + books[i].author.firstName + " " + books[i].author.lastName);
+        console.log("---");
+    }
 
     /**
      * Bonus:
@@ -153,5 +159,48 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+    var storedBooks = [];
+
+
+    var askToStoreBookInfo = confirm("Would you like to store your books information?")
+
+    if (askToStoreBookInfo) {
+        var numOfStoredBooks = parseInt(prompt("How many books information would you like to store?"));
+    } else {
+        alert("Maybe next time!");
+    }
+
+
+
+    while (numOfStoredBooks > 0) {
+        storedBooks.push(createBook());
+        numOfStoredBooks--;
+    }
+
+    function createBook(title, author) {
+        title = prompt("What is the name of the title?");
+        author = prompt("What is the first and last name of the author?").split(" ");
+
+        return {
+            title: title,
+            author: {
+                firstName: author[0],
+                lastName: author[1]
+            }
+        };
+    }
+
+    console.log(storedBooks);
+
+
+    storedBooks.forEach(showBookInfo);
+
+    function showBookInfo(book, i) {
+        console.log("Book # " + (i + 1));
+        console.log("Title: " + book.title);
+        console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+        console.log("---");
+    }
 
 })();
