@@ -192,3 +192,26 @@ function areaOfCircle(number) {
 function circumference(number) {
     return 2 * Math.PI * number;
 }
+
+// Exercise 43
+function isVowel(value) {
+    value = value.toLowerCase();
+    if (value === "a" || value === "e" || value === "i" || value === "o" || value === "u") {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// OR ********************
+
+function isVowel(value) {
+  value = value.toLowerCase();
+  return ((["a", "e", "i", "o", "u"].indexOf(value)) != -1)
+}
+
+// Exercise 44
+function hasVowels(value) {
+    value = value.toLowerCase();
+    return value.includes("a") || value.includes("e")|| value.includes("i") || value.includes("o") || value.includes("u");
+}
