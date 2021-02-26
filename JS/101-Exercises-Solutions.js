@@ -182,3 +182,13 @@ function areaOfRectangle(num1, num2) {
 
     return length * width;
 }
+
+// Exercise 41
+function areaOfCircle(number) {
+    return Math.PI * Math.pow(number, 2);
+}
+
+// Exercise 42
+function circumference(number) {
+    return 2 * Math.PI * number;
+}
