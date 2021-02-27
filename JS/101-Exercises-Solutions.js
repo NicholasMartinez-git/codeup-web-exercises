@@ -281,3 +281,17 @@ function endsWithVowel(string) {
 }
 
 // Exercise 49
+function startsAndEndsWithVowel(string) {
+    if ((startsWithVowel(string) && endsWithVowel(string))) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// Exercise 50
+function first(sqnc) {
+    return sqnc[0];
+}
+
+// Exercise 51
