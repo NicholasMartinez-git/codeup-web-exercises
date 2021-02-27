@@ -217,3 +217,31 @@ function hasVowels(value) {
 }
 
 // Exercise 45
+function countVowels(value) {
+    var count = 0;
+    for (var i = 0; i < value.length; i++) {
+
+        var char = value[i];
+
+        if (hasVowels(char)) {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+// Exercise 46
+function removeVowels(value) {
+
+    var charArray = value.split("");
+
+    for (var i = 0; i < charArray.length; i++) {
+
+        if (hasVowels(charArray[i])) {
+            charArray[i] = "";
+        }
+    }
+
+    return charArray.join("");
+}
