@@ -245,3 +245,39 @@ function removeVowels(value) {
 
     return charArray.join("");
 }
+
+// Exercise 47
+function startsWithVowel(string) {
+    string = string.toLowerCase();
+    var char = string.charAt(0);
+    if (hasVowels(char)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// OR
+
+function startsWithVowel(string) {
+  string = string.toLowerCase();
+  var char = string.charAt(0);
+  if (char === "a" || char === "e" || char === "i" || char === "o" || char === "u") {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// Exercise 48
+function endsWithVowel(string) {
+    string = string.toLowerCase();
+    var char = string.charAt(string.length - 1);
+    if (hasVowels(char)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// Exercise 49
