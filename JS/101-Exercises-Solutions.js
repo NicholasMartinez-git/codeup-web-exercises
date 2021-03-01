@@ -318,3 +318,10 @@ function last(sqnc) {
 function secondToLast(sqnc) {
     return sqnc[sqnc.length -2];
 }
+
+// Exercise 56
+function thirdToLast(sqnc) {
+    return sqnc[sqnc.length - 3];
+}
+
+// Exercise 57
