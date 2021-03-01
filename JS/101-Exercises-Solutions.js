@@ -298,3 +298,8 @@ function first(sqnc) {
 function second(sqnc) {
     return sqnc[1];
 }
+
+// Exercise 52
+function third(sqnc) {
+    return sqnc[2];
+}
