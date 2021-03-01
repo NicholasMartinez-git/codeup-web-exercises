@@ -4,10 +4,8 @@
 // write a function that takes in three inputs that represent the hours, minutes, and am or pm. convert these inputs to military time and display both the military time and the original time.
 function clock(hours, minutes, meridian) {
     var date = new Date();
-    var militaryHours = date.getHours();
-    var militaryMinutes = date.getMinutes();
     hours = date.getHours();
-    minutes = ('0'+ date.getMinutes()).slice(-2);;
+    minutes = ('0' + date.getMinutes()).slice(-2);;
     meridian = "A.M."
 
     if (hours >= 12) {
@@ -18,7 +16,7 @@ function clock(hours, minutes, meridian) {
         hours = 12;
     }
 
-    return hours + ":" + minutes + " " + meridian + "\n" + militaryHours + ":" + militaryMinutes;
+    return hours + ":" + minutes + " " + meridian;
 }
 
 console.log(clock());

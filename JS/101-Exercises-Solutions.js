@@ -315,3 +315,6 @@ function last(sqnc) {
 }
 
 // Exercise 55
+function secondToLast(sqnc) {
+    return sqnc[sqnc.length -2];
+}
