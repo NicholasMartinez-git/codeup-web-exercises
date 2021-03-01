@@ -326,5 +326,11 @@ function thirdToLast(sqnc) {
 
 // Exercise 57
 function firstAndSecond(sqnc) {
+    return [first(sqnc), second(sqnc)];
+}
+
+// OR
+
+function firstAndSecond(sqnc) {
     return sqnc.slice(0, 2);
 }
