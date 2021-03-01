@@ -303,3 +303,10 @@ function second(sqnc) {
 function third(sqnc) {
     return sqnc[2];
 }
+
+// Exercise 53
+function forth(sqnc) {
+    return sqnc[3]
+}
+
+// Exercise 54
