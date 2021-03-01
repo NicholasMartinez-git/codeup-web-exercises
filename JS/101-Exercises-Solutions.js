@@ -334,3 +334,8 @@ function firstAndSecond(sqnc) {
 function firstAndSecond(sqnc) {
     return sqnc.slice(0, 2);
 }
+
+// Exercise 58
+function firstAndLast(sqnc) {
+    return [first(sqnc), last(sqnc)];
+}
