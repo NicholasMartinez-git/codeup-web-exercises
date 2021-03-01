@@ -295,3 +295,6 @@ function first(sqnc) {
 }
 
 // Exercise 51
+function second(sqnc) {
+    return sqnc[1];
+}

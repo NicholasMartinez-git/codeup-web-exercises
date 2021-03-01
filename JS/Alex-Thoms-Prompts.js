@@ -17,6 +17,9 @@ function clock(hours, minutes, meridian) {
     if (hours === 0 || hours === 12) {
         hours = 12;
     }
+    if (minutes < 10) {
+        minutes = "0" + minutes;
+    }
 
     return hours + ":" + minutes + " " + meridian + "\n" + militaryHours + ":" + militaryMinutes;
 }
