@@ -310,3 +310,8 @@ function forth(sqnc) {
 }
 
 // Exercise 54
+function last(sqnc) {
+    return sqnc[sqnc.length - 1];
+}
+
+// Exercise 55
