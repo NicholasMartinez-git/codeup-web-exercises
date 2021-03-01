@@ -339,3 +339,9 @@ function firstAndSecond(sqnc) {
 function firstAndLast(sqnc) {
     return [first(sqnc), last(sqnc)];
 }
+
+// Exercise 59
+function firstToLast(sqnc) {
+    sqnc.push(sqnc.shift());
+    return sqnc;
+}
