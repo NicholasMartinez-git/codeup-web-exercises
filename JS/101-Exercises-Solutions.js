@@ -325,3 +325,6 @@ function thirdToLast(sqnc) {
 }
 
 // Exercise 57
+function firstAndSecond(sqnc) {
+    return sqnc.slice(0, 2);
+}
