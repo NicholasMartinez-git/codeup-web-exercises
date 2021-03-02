@@ -345,3 +345,24 @@ function firstToLast(sqnc) {
     sqnc.push(sqnc.shift());
     return sqnc;
 }
+
+// Exercise 60
+function isANumberOrStringNumber(input) {
+    return !isNaN(parseFloat(input));
+}
+function sumAll(sqnc) {
+    var sum = 0;
+
+    for (var i = 0; i < sqnc.length; i++) {
+
+        if (!isANumberOrStringNumber(sqnc[i])) {
+            sqnc[i] = 0;
+        }
+
+        sum += parseFloat(sqnc[i]);
+    }
+
+    return sum;
+}
+
+// Exercise 61
