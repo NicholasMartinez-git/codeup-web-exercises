@@ -397,3 +397,20 @@ function median(sqnc) {
 }
 
 // Exercise 63
+function maxMinusMin(array) {
+
+    var onlyNumArray = [];
+
+    for (var i = 0; i < array.length; i++) {
+
+        if (isANumberOrStringNumber(array[i])) {
+            onlyNumArray.push(array[i]);
+        }
+    }
+
+    onlyNumArray.sort(function(a, b) {
+        return a - b;
+    });
+
+    return onlyNumArray[onlyNumArray.length - 1] - onlyNumArray[0];
+}
