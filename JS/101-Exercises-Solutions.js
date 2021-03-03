@@ -372,3 +372,28 @@ function mean(sqnc) {
 }
 
 // Exercise 62
+function median(sqnc) {
+
+    var onlyNumSqnc = [];
+
+    for (var i = 0; i < sqnc.length; i++) {
+
+        if (isANumberOrStringNumber(sqnc[i])) {
+            onlyNumSqnc.push(sqnc[i]);
+        }
+    }
+
+    onlyNumSqnc.sort(function(a, b) {
+        return a - b;
+    });
+
+    var mid = Math.floor(onlyNumSqnc.length / 2);
+
+    if(mid % 2 !== 0) {
+        return onlyNumSqnc[mid];
+    } else {
+        return (onlyNumSqnc[mid -1] + onlyNumSqnc[mid]) / 2.0
+    }
+}
+
+// Exercise
