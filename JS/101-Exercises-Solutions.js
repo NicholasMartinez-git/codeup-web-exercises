@@ -366,3 +366,9 @@ function sumAll(sqnc) {
 }
 
 // Exercise 61
+function mean(sqnc) {
+    var mean = sumAll(sqnc) / sqnc.length;
+    return mean;
+}
+
+// Exercise 62
