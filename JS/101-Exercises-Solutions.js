@@ -389,11 +389,11 @@ function median(sqnc) {
 
     var mid = Math.floor(onlyNumSqnc.length / 2);
 
-    if(mid % 2 !== 0) {
+    if(onlyNumSqnc.length % 2 !== 0) {
         return onlyNumSqnc[mid];
     } else {
         return (onlyNumSqnc[mid -1] + onlyNumSqnc[mid]) / 2.0
     }
 }
 
-// Exercise
+// Exercise 63
