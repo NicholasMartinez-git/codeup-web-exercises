@@ -512,3 +512,17 @@ function onlyEvenNumbers(sqnc) {
 
     return onlyNumAndEvenSqnc;
 }
+
+// Exercise 69
+function onlyPositiveNumbers(sqnc) {
+    var onlyNumAndPositiveSqnc = [];
+
+    for (var i = 0; i < sqnc.length; i++) {
+
+        if (isANumberOrStringNumber(sqnc[i]) && isPositive(sqnc[i])) {
+            onlyNumAndPositiveSqnc.push(sqnc[i]);
+        }
+    }
+
+    return onlyNumAndPositiveSqnc;
+}
