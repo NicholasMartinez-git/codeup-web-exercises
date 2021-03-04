@@ -498,3 +498,17 @@ function onlyOddNumbers(sqnc) {
 
     return onlyNumAndOddSqnc;
 }
+
+// Exercise 68
+function onlyEvenNumbers(sqnc) {
+    var onlyNumAndEvenSqnc = [];
+
+    for (var i = 0; i < sqnc.length; i++) {
+
+        if (isANumberOrStringNumber(sqnc[i]) && isEven(sqnc[i])) {
+            onlyNumAndEvenSqnc.push(sqnc[i]);
+        }
+    }
+
+    return onlyNumAndEvenSqnc;
+}
