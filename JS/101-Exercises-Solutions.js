@@ -526,3 +526,17 @@ function onlyPositiveNumbers(sqnc) {
 
     return onlyNumAndPositiveSqnc;
 }
+
+// Exercise 70
+function onlyNegativeNumbers(sqnc) {
+    var onlyNumAndNegativeSqnc = [];
+
+    for (var i = 0; i < sqnc.length; i++) {
+
+        if (isANumberOrStringNumber(sqnc[i]) && isNegative(sqnc[i])) {
+            onlyNumAndNegativeSqnc.push(sqnc[i]);
+        }
+    }
+
+    return onlyNumAndNegativeSqnc;
+}
