@@ -465,3 +465,36 @@ function getHighestNumber(sqnc) {
 
     return onlyNumSqnc[onlyNumSqnc.length-1];
 }
+
+// Exercise 66 ---> Could also use the Math.min() to find the smallest number within the onlyNumSqnc[]
+function getSmallestNumber(sqnc) {
+    var onlyNumSqnc = [];
+
+    for (var i = 0; i < sqnc.length; i++) {
+
+        if (isANumberOrStringNumber(sqnc[i])) {
+            onlyNumSqnc.push(sqnc[i]);
+        }
+
+    }
+
+    onlyNumSqnc.sort(function(a,b){
+        return a-b;
+    });
+
+    return onlyNumSqnc[0];
+}
+
+// Exercise 67
+function onlyOddNumbers(sqnc) {
+    var onlyNumAndOddSqnc = [];
+
+    for (var i = 0; i < sqnc.length; i++) {
+
+        if (isANumberOrStringNumber(sqnc[i]) && isOdd(sqnc[i])) {
+            onlyNumAndOddSqnc.push(sqnc[i]);
+        }
+    }
+
+    return onlyNumAndOddSqnc;
+}
