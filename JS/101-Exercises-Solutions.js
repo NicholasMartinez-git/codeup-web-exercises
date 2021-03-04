@@ -348,7 +348,7 @@ function firstToLast(sqnc) {
 
 // Exercise 60
 function isANumberOrStringNumber(input) {
-    return !isNaN(parseFloat(input));
+    return !isNaN(parseFloat(input)) && isFinite(input);
 }
 function sumAll(sqnc) {
     var sum = 0;
