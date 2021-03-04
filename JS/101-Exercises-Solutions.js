@@ -431,3 +431,37 @@ function productOfAll(sqnc) {
 
     return sum;
 }
+
+// Exercise 65
+function getHighestNumber(sqnc) {
+    var onlyNumSqnc = [];
+
+    for (var i = 0; i < sqnc.length; i++) {
+
+        if (isANumberOrStringNumber(sqnc[i])) {
+            onlyNumSqnc.push(sqnc[i]);
+        }
+
+    }
+    return Math.max(...onlyNumSqnc);
+}
+
+// Or
+
+function getHighestNumber(sqnc) {
+    var onlyNumSqnc = [];
+
+    for (var i = 0; i < sqnc.length; i++) {
+
+        if (isANumberOrStringNumber(sqnc[i])) {
+            onlyNumSqnc.push(sqnc[i]);
+        }
+
+    }
+
+    onlyNumSqnc.sort(function(a,b){
+        return a-b;
+    });
+
+    return onlyNumSqnc[onlyNumSqnc.length-1];
+}
