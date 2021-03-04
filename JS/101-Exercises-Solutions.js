@@ -414,3 +414,20 @@ function maxMinusMin(array) {
 
     return onlyNumArray[onlyNumArray.length - 1] - onlyNumArray[0];
 }
+
+// Exercise 64
+function productOfAll(sqnc) {
+
+    var onlyNumSqnc = [];
+    var sum = 1;
+
+    for (var i = 0; i < sqnc.length; i++) {
+
+        if (isANumberOrStringNumber(sqnc[i])) {
+            onlyNumSqnc.push(sqnc[i]);
+        }
+        sum *= parseFloat(onlyNumSqnc[i]);
+    }
+
+    return sum;
+}
