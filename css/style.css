@@ -1,6 +1,7 @@
 /* Stylesheet for the welcome page - welcome.html */
 
 .fancy-header {
-    color: purple;
+    color: blue;
     text-decoration: underline;
+    text-align: center;
 }
