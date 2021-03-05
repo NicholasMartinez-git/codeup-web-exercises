@@ -20,3 +20,11 @@ h2 {
     text-decoration: underline;
     text-decoration-color: #969e88;
 }
+
+ul {
+    list-style-type: square;
+}
+
+ol {
+    list-style-type: lower-roman;
+}
