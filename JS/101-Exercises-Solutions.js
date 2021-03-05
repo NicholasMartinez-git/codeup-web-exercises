@@ -19,6 +19,7 @@ fruits.push("tomato");
 vegetables.push("tomato");
 
 // Exercise 7
+var someNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 someNumbers.reverse();
 
 // Exercise 8
@@ -540,3 +541,18 @@ function onlyNegativeNumbers(sqnc) {
 
     return onlyNumAndNegativeSqnc;
 }
+
+// Exercise 71
+function hasEvens(sqnc) {
+    var onlyNumSqnc = [];
+
+    for (var i = 0; i < sqnc.length; i++) {
+
+        if (isANumberOrStringNumber(sqnc[i])) {
+            onlyNumSqnc.push(sqnc[i]);
+        }
+    }
+
+    return onlyNumSqnc.some(isEven)
+}
+
