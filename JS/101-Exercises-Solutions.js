@@ -556,3 +556,17 @@ function hasEvens(sqnc) {
     return onlyNumSqnc.some(isEven)
 }
 
+// Exercise 72
+function countEvens(sqnc) {
+    var count = 0;
+
+    for (var i = 0; i < sqnc.length; i++) {
+
+        if (isANumberOrStringNumber(sqnc[i]) && isEven(sqnc[i])) {
+            count++;
+        }
+    }
+
+    return count;
+}
+
