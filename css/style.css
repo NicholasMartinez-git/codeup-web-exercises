@@ -40,3 +40,23 @@ th {
     font-size: 20px;
     text-decoration: underline;
 }
+
+/* unvisited link (:link) */
+a:link {
+    color:blue;
+}
+
+/* visited link (:visited) */
+a:visited {
+    color:red;
+}
+
+/* mouse hover over link (:hover) */
+a:hover {
+    color:yellow;
+}
+
+/* active/selected link (:active) */
+a:active {
+    color:green;
+}
