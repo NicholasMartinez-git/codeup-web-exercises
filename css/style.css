@@ -30,3 +30,13 @@ ul {
 ol {
     list-style-type: lower-roman;
 }
+
+td, tr, th {
+    border: 1px solid black;
+    padding: 1em;
+}
+
+th {
+    font-size: 20px;
+    text-decoration: underline;
+}
