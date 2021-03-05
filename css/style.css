@@ -1,18 +1,22 @@
 /* Stylesheet for the welcome page - welcome.html */
 
 body {
-    background-color: #93b5ff;
+    background-image: url("../img/pexels-wouter-de-jong-571169.jpg");
+    background-color: #888b9e;
+    background-position: center;
+    background-size: cover;
+
 }
 
 .fancy-header {
-    color: #ffdd93;
+    color: #9e9088;
     text-decoration: underline;
-    text-decoration-color: #b5ff93;
+    text-decoration-color: #969e88;
     text-align: center;
 }
 
 h2 {
-    color: #ffdd93;
+    color: #9e9088;
     text-decoration: underline;
-    text-decoration-color: #b5ff93;
+    text-decoration-color: #969e88;
 }
