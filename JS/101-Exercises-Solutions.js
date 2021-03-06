@@ -583,3 +583,17 @@ function hasOdds(sqnc) {
 
     return onlyNumSqnc.some(isOdd)
 }
+
+// Exercise 74
+function countOdds(sqnc) {
+    var count = 0;
+
+    for (var i = 0; i < sqnc.length; i++) {
+
+        if (isANumberOrStringNumber(sqnc[i]) && isOdd(sqnc[i])) {
+            count++;
+        }
+    }
+
+    return count;
+}
