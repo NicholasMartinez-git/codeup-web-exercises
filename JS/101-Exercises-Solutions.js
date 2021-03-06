@@ -570,3 +570,16 @@ function countEvens(sqnc) {
     return count;
 }
 
+// Exercise 73
+function hasOdds(sqnc) {
+    var onlyNumSqnc = [];
+
+    for (var i = 0; i < sqnc.length; i++) {
+
+        if (isANumberOrStringNumber(sqnc[i])) {
+            onlyNumSqnc.push(sqnc[i]);
+        }
+    }
+
+    return onlyNumSqnc.some(isOdd)
+}
