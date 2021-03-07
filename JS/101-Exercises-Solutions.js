@@ -597,3 +597,20 @@ function countOdds(sqnc) {
 
     return count;
 }
+
+// Exercise 75
+function countNegatives(sqnc) {
+    var count = 0;
+
+    for (var i = 0; i < sqnc.length; i++) {
+
+        if (isANumberOrStringNumber(sqnc[i]) && isNegative(sqnc[i])) {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+
+// Exercise 76
