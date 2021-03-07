@@ -614,3 +614,15 @@ function countNegatives(sqnc) {
 
 
 // Exercise 76
+function countPositives(sqnc) {
+    var count = 0;
+
+    for (var i = 0; i < sqnc.length; i++) {
+
+        if (isANumberOrStringNumber(sqnc[i]) && isPositive(sqnc[i])) {
+            count++;
+        }
+    }
+
+    return count;
+}
