@@ -626,3 +626,17 @@ function countPositives(sqnc) {
 
     return count;
 }
+
+// Exercise 77
+function onlyPositiveEvens(sqnc) {
+    var onlyNumAndPositiveSqnc = [];
+
+    for (var i = 0; i < sqnc.length; i++) {
+
+        if (isANumberOrStringNumber(sqnc[i]) && isPositive(sqnc[i]) && isEven(sqnc[i])) {
+            onlyNumAndPositiveSqnc.push(sqnc[i]);
+        }
+    }
+
+    return onlyNumAndPositiveSqnc;
+}
