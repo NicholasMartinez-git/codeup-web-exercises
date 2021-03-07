@@ -682,3 +682,25 @@ function onlyNegativeOdds(sqnc) {
 
     return onlyNumAndNegativeAndOddSqnc;
 }
+
+// Exercise 81
+function isString(input) {
+    return typeof input === "string";
+}
+function shortestString(array) {
+    var onlyStringsAndNumericStrings = []
+    for (var i = 0; i < array.length; i++) {
+        if (isString(array[i])) {
+            onlyStringsAndNumericStrings.push(array[i]);
+        }
+    }
+
+    return onlyStringsAndNumericStrings.reduce(function(previousString, currentString) {
+        if (currentString.length < previousString.length) {
+
+            return currentString;
+        } else {
+            return previousString;
+        }
+    })
+}
