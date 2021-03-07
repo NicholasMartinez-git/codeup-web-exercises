@@ -654,3 +654,17 @@ function onlyPositiveOdds(sqnc) {
 
     return onlyNumAndPositiveAndOddSqnc;
 }
+
+// Exercise 79
+function onlyNegativeEvens(sqnc) {
+    var onlyNumAndNegativeAndEvenSqnc = [];
+
+    for (var i = 0; i < sqnc.length; i++) {
+
+        if (isANumberOrStringNumber(sqnc[i]) && isNegative(sqnc[i]) && isEven(sqnc[i])) {
+            onlyNumAndNegativeAndEvenSqnc.push(sqnc[i]);
+        }
+    }
+
+    return onlyNumAndNegativeAndEvenSqnc;
+}
