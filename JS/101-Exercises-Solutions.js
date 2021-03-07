@@ -640,3 +640,17 @@ function onlyPositiveEvens(sqnc) {
 
     return onlyNumAndPositiveSqnc;
 }
+
+// Exercise 78
+function onlyPositiveOdds(sqnc) {
+    var onlyNumAndPositiveAndOddSqnc = [];
+
+    for (var i = 0; i < sqnc.length; i++) {
+
+        if (isANumberOrStringNumber(sqnc[i]) && isPositive(sqnc[i]) && isOdd(sqnc[i])) {
+            onlyNumAndPositiveAndOddSqnc.push(sqnc[i]);
+        }
+    }
+
+    return onlyNumAndPositiveAndOddSqnc;
+}
