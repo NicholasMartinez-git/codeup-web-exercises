@@ -723,3 +723,19 @@ function longestString(array) {
         }
     })
 }
+
+// Exercise 83
+function getUniqueValues(array) {
+    var onlyStringsAndNumericStrings = []
+    for (var i = 0; i < array.length; i++) {
+        if (isString(array[i])) {
+            onlyStringsAndNumericStrings.push(array[i]);
+        }
+    }
+
+    var uniqueStrings = onlyStringsAndNumericStrings.filter(function (string, index) {
+        return onlyStringsAndNumericStrings.indexOf(string) === index;
+    })
+
+    return uniqueStrings;
+}
