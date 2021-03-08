@@ -41,8 +41,8 @@ fieldset {
     /* It should have a separation of .5em from elements on top of it and below it*/
     width: 100%;
     padding-top: .5em;
-    padding-bottom: .5em
-;
+    padding-bottom: .5em;
+
 }
 
 .form-label {
