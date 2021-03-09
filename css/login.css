@@ -66,6 +66,7 @@ fieldset {
 }
 
 .form-control {
+    border: 1px solid lightgrey;
     /* There must be 4px on top of the text and below the text of an input with this class */
     padding-top: 4px;
     padding-bottom: 4px;

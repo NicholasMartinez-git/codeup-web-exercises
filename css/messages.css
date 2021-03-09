@@ -13,14 +13,11 @@ body, html {
     --text-success:#1e7541;
 }
 
-div {
+.message {
+    border-radius: 5px;
     border: 1px solid lightgray;
     padding: .5em;
     margin: 1em;
-}
-
-.message {
-    border-radius: 5px;
 }
 
 .message-info {
