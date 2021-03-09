@@ -19,6 +19,10 @@ div {
     margin: 1em;
 }
 
+.message {
+    border-radius: 5px;
+}
+
 .message-info {
     background-color: var(--bg-info);
     color: var(--text-info)
