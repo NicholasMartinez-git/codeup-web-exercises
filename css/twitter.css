@@ -52,6 +52,10 @@ a {
 .profile {
     background: var(--light-bg);
 }
+.profile-image {
+    position: absolute;
+    top: 225px;
+}
 .btn {
     border: 1px solid var(--main-link-color);
     color: var(--main-link-color);
