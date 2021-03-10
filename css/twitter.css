@@ -51,10 +51,15 @@ a {
 }
 .profile {
     background: var(--light-bg);
+    height: 80px;
 }
 .profile-image {
     position: absolute;
-    top: 225px;
+    top: 235px;
+}
+.profile-form {
+    /*float: right;*/
+    line-height: 80px;
 }
 .btn {
     border: 1px solid var(--main-link-color);
