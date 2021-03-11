@@ -62,13 +62,20 @@ a {
     top: 235px;
 }
 .profile-form {
-    /*float: right;*/
+    float: right;
     line-height: 80px;
 }
 .profile-details {
     float: left;
     width: calc(25% - .5em);
     margin: 0em .5em;
+}
+.profile-items {
+    padding: 0;
+    list-style-type: none;
+}
+.profile-entry {
+    margin: .5em;
 }
 .timeline {
     float: left;
