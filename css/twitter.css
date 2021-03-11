@@ -50,6 +50,9 @@ a {
 .nav-link:hover {
     color: var(--link-color);
 }
+.container {
+    margin: 2em;
+}
 .profile {
     background: var(--light-bg);
     height: 80px;
