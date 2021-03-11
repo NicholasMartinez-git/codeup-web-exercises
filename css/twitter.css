@@ -62,6 +62,21 @@ a {
     /*float: right;*/
     line-height: 80px;
 }
+.profile-details {
+    float: left;
+    width: calc(25% - .5em);
+    margin: 0em .5em;
+}
+.timeline {
+    float: left;
+    width: calc(50% - .5em);
+    margin: 0em .5em;
+}
+.who-to-follow {
+    float: right;
+    width: calc(25% - .5em);
+    margin: 0em .5em;
+}
 .btn {
     border: 1px solid var(--main-link-color);
     color: var(--main-link-color);
