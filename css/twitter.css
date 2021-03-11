@@ -68,8 +68,7 @@ a {
 .profile-details {
     float: left;
     width: calc(25% - 1em);
-    margin-right: .5em;
-    margin-left: .5em;
+    margin: 0 .5em;
 }
 .profile-items {
     padding: 0;
@@ -81,14 +80,12 @@ a {
 .timeline {
     float: left;
     width: calc(50% - 1em);
-    margin-right: .5em;
-    margin-left: .5em;
+    margin: 0 .5em;
 }
 .who-to-follow {
-    float: right;
+    float: left;
     width: calc(25% - 1em);
-    margin-right: .5em;
-    margin-left: .5em;
+    margin: 0 .5em;
 }
 .media {
     width: 100%;
