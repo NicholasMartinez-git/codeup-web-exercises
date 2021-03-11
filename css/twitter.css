@@ -93,6 +93,10 @@ a {
     float: left;
     margin: 1.33em;
 }
+.media-body {
+    width: calc(100% - 50px);
+
+}
 .btn {
     border: 1px solid var(--main-link-color);
     color: var(--main-link-color);
