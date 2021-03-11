@@ -51,7 +51,7 @@ a {
     color: var(--link-color);
 }
 .container {
-    margin: 2em;
+    margin-top: 2em;
 }
 .profile {
     background: var(--light-bg);
