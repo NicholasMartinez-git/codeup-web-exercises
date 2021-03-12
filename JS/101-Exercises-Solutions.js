@@ -739,3 +739,25 @@ function getUniqueValues(array) {
 
     return uniqueStrings;
 }
+
+// Exercise 84
+function elementsTimesTwo(array) {
+
+    var onlyNumOrNumStrings = [];
+
+    for (var i = 0; i < array.length; i++) {
+        if (isANumberOrStringNumber(array[i])) {
+            onlyNumOrNumStrings.push(array[i]);
+        }
+    }
+
+    var ETT = [];
+
+    for (var j = 0; j < onlyNumOrNumStrings.length; j++) {
+        ETT.push(onlyNumOrNumStrings[j] * 2);
+    }
+
+    return ETT;
+}
+
+// Exercise 85
