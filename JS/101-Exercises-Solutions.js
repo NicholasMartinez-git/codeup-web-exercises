@@ -761,3 +761,7 @@ function elementsTimesTwo(array) {
 }
 
 // Exercise 85
+function flatten(array) {
+    var flatArray = array.flat(array.length);
+    return flatArray;
+}
