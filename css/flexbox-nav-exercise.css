@@ -24,6 +24,8 @@ li {
 .nav-logo {
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
+    font-size: 3em;
+    padding: .2em 0;
 }
 
 .nav-item {
