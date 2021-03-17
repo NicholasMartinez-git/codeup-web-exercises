@@ -20,8 +20,8 @@ ul {
     padding: 0;
 }
 
-li {
-
+li:hover {
+    align-self: stretch;
 }
 
 li:nth-child(4) {
@@ -39,15 +39,14 @@ li:nth-child(6) {
 
 .nav-logo {
     position: absolute;
-    top: 30%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
     font-size: 3em;
-    padding: .2em;
+    padding: .2em 0;
 }
-
 a {
     text-decoration: none;
     color: black;
@@ -57,5 +56,5 @@ a {
 }
 
 a:hover {
-    color: blue;
+    background: blue;
 }

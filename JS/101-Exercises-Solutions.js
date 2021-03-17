@@ -765,3 +765,19 @@ function flatten(array) {
     var flatArray = array.flat(array.length);
     return flatArray;
 }
+
+// Exercise 86
+function addOneToArray(array) {
+
+    for (var i = 0; i < array.length; i++) {
+
+        if (typeof array[i] === 'number' && isFinite(array[i])) {
+
+            array[i] = array[i] + 1;
+
+        }
+
+    }
+
+    return array;
+}
