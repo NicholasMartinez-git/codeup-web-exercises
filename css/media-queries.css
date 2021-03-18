@@ -5,3 +5,17 @@
     padding: 0;
 }
 
+/* Box for "Skip to main content" */
+.alert-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div a {
+    background-color: #ccffff;
+    border: 2px solid #cccccc;
+    padding: 5px 100px;
+}
+
+/* "Company" */
