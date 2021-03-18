@@ -1,3 +1,7 @@
 * {
-
+    box-sizing: border-box;
+    /* Check with instructors to see why we are precisely using margin and padding 0 below. */
+    margin: 0;
+    padding: 0;
 }
+
