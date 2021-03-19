@@ -28,19 +28,30 @@ h1 {
 }
 
 /* nav bar box */
-ul {
+nav ul {
     display: flex;
     flex-direction: column;
     align-items: center;
     list-style: none;
 }
 
-li {
+nav li {
     background-color: #cccccc;
     width: 95%;
     text-align: center;
     padding: .4em 0;
-    margin: .3em 0;
+    margin: .4em 0;
 }
 
 /* image */
+div.header-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    width: 339px;
+    height: 224px;
+    margin: .4em 0;
+}
