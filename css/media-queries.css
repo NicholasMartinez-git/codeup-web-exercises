@@ -19,3 +19,22 @@ div a {
 }
 
 /* "Company" */
+h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* nav bar box */
+ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+}
+
+li {
+    background-color: #cccccc;
+}
+
+/* image */
