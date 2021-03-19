@@ -111,7 +111,36 @@ footer p {
 /* all devices from 768 and up */
 
 @media screen and (min-width:768px) {
+
+    /* Hide the "Skip to main content */
     div.hidden-on-desktop {
         display: none;
     }
+
+    /* "Company" & nav bar */
+    h1 {
+        flex-direction: row;
+        justify-content: flex-start;
+        position: absolute;
+        top: .5em;
+        left: .8em;
+    }
+
+    nav {
+        display: flex;
+        justify-content: flex-end;
+        margin: 1.2em 0 1em 2em;
+        width: 95%;
+    }
+
+    nav ul {
+        flex-direction: row;
+    }
+
+    nav li {
+        background-color: transparent;
+        margin: 0.5em;
+        padding: 0;
+    }
+
 }
