@@ -143,4 +143,45 @@ footer p {
         padding: 0;
     }
 
+    img {
+        height: 385px;
+        margin: 2em .5em 1em .5em;
+    }
+
+    /* Paragraphs */
+    body {
+        display: flex;
+        flex-flow: wrap;
+    }
+
+    section {
+        flex-direction: column;
+        display: inline-block;
+        width: fit-content;
+    }
+
+    section.main {
+        width: 70%;
+    }
+
+    section.main h2 {
+        margin: 1em 0 .5em .9em;
+    }
+
+    section.sub-section {
+        width: 25%;
+    }
+
+    section.sub-section h2 {
+        font-size: revert;
+        margin: 1em 0 .5em .9em;
+    }
+
+    section p {
+        margin: 0 0 0 1.1em;
+    }
+
+    footer p {
+        margin: 5em 0 5em 0;
+    }
 }
