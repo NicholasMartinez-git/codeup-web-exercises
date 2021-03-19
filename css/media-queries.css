@@ -35,6 +35,10 @@ ul {
 
 li {
     background-color: #cccccc;
+    width: 95%;
+    text-align: center;
+    padding: .4em 0;
+    margin: .3em 0;
 }
 
 /* image */
