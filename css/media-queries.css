@@ -1,3 +1,5 @@
+/* Mobile approach for anything below 768px */
+
 * {
     box-sizing: border-box;
     /* Check with instructors to see why we are precisely using margin and padding 0 below. */
@@ -6,7 +8,7 @@
 }
 
 /* Box for "Skip to main content" */
-.alert-info {
+div.alert-info {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,7 +44,7 @@ nav li {
     background-color: #cccccc;
     width: 95%;
     text-align: center;
-    margin: .3em;
+    margin: .5em;
     padding: 1em;
 }
 
@@ -57,9 +59,59 @@ img {
     /*width: 339px;*/
     width: 95%;
     height: 224px;
+    margin: .5em;
 }
 
 /* Main Section Paragraph & Sub-section Paragraph */
-h2 {
+section.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+}
 
+section.main h2 {
+    width: 95%;
+    margin: 1em 0 .5em 0;
+}
+
+section.sub-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    font-style: italic;
+}
+
+section.sub-section h2 {
+    width: 95%;
+    font-size: larger;
+    margin: 2.5em 0 .5em 0;
+}
+
+section p {
+    width: 95%;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+}
+
+footer p {
+    width: 95%;
+    margin: 5em 0 .5em 0;
+    align-items: flex-start;
+}
+
+
+/* all devices from 768 and up */
+
+@media screen and (min-width:768px) {
+    div.hidden-on-desktop {
+        display: none;
+    }
 }
