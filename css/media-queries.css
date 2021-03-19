@@ -16,6 +16,7 @@ div a {
     background-color: #ccffff;
     border: 2px solid #cccccc;
     padding: 5px 100px;
+    text-decoration: none;
 }
 
 /* "Company" */
