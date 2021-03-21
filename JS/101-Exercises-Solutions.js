@@ -804,3 +804,10 @@ const thomasPaper = {
 function getPaperTitle(object) {
     return object.title;
 }
+
+// Exercise 88
+function getYearPublished(object) {
+    return object.year_published;
+}
+
+// Exercise 89
