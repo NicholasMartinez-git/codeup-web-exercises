@@ -810,4 +810,14 @@ function getYearPublished(object) {
     return object.year_published;
 }
 
+// this code defines a JS object with information about a book.
+const book = {
+    "title": "Genetic Algorithms and Machine Learning for Programmers",
+    "price": 36.99,
+    "author": "Frances Buontempo"
+}
+
 // Exercise 89
+function getPrice(object) {
+    return object.price;
+}
