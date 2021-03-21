@@ -781,3 +781,26 @@ function addOneToArray(array) {
 
     return array;
 }
+
+
+// Working with JS Objects
+
+// The following objects
+const tukeyPaper = {
+    "title": "The Future of Data Analysis",
+    "author": "John W. Tukey",
+    "link": "https://projecteuclid.org/euclid.aoms/1177704711",
+    "year_published": 1962
+}
+
+const thomasPaper = {
+    "title": "A mathematical model of glutathione metabolism",
+    "author": "Rachel Thomas",
+    "link": "https://www.ncbi.nlm.nih.gov/pubmed/18442411",
+    "year_published": 2008
+}
+
+// Exercise 87
+function getPaperTitle(object) {
+    return object.title;
+}
