@@ -1,3 +1,11 @@
-.jumbotron {
+.container {
 
+}
+
+.jumbotron {
+    background-image: url("../img/pizza-world.png");
+}
+
+header h1 {
+    opacity: 70%;
 }
