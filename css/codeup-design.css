@@ -149,3 +149,29 @@ h6 {
     border-radius: 50%;
 }
 /* --------------- End: X-Small Devices --------------- */
+
+/* --------------- Start: X-Small Devices --------------- */
+@media screen and (min-width: 576px) {
+    #logo {
+        height: 150px;
+        width: 150px;
+    }
+
+    .white-strip {
+        height: 80px;
+    }
+
+    h1.codeupdesign {
+
+    }
+
+    h1.visual-design {
+
+    }
+
+    h4.city {
+
+    }
+}
+
+
