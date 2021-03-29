@@ -151,44 +151,40 @@ div.circles > button {
     color: var(--very-light-gray);
 }
 
-#selectedWork {
-    font-family: 'Abel', sans-serif;
-    font-size: 21px;
+p.selected-work {
+    font-size: 16px;
+    text-align: center;
 }
 
 #appleIpadBox {
     font-family: 'Abel', sans-serif;
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
 #appleIpad {
-    height: 200px;
-    width: 330px;
+    height: 175px;
+    width: 275px;
     border: 10px solid #F0F0F0;
-}
-
-h6 {
-    font-size: 21px;
 }
 
 #badge1 {
     margin-left: 50px;
-    background: #E6563B;
+    background-color: var(--bright-red);
 }
 
 #badge2 {
-    background: #eb9d3a;
+    background-color: var(--bright-orange);
 }
 
 #badge3 {
-    background: #7cb06c;
+    background-color: var(--desaturated-dark-lime-green);
 }
 
 #badge4 {
-    background: #00aba9;
+    background-color: var(--dark-cyan);
 }
 
 .badge {
