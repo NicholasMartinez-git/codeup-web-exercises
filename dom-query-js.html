@@ -6,6 +6,12 @@
 </head>
 <body>
 
+<button id="btn1">Change Main Header</button>
+<button id="btn2">Change Sub Header</button>
+<button id="btn3">Change List Items</button>
+<button id="btn4">Change List Items by dbId</button>
+<button id="btn5">Change Sub Paragraph</button>
+
 <h1 id="main-header">Hello World!</h1>
 <ul>
     <li data-dbid="1">Item 1</li>
@@ -32,39 +38,59 @@
         var mainHeader = document.getElementById("main-header");
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = "JavaScript is Cool";
+        var buttonOne = document.getElementById("btn1")
+        var changeMainHeader = function (event) {
+            mainHeader.innerHTML = "JavaScript is Cool";
+        }
+        buttonOne.addEventListener("click", changeMainHeader);
 
         // TODO: Uncomment the next line and get the sub header element by id
         var subHeader = document.getElementById("sub-header");
 
         // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = "blue";
+        var buttonTwo = document.getElementById("btn2")
+        var changeSubHeader = function (event) {
+            subHeader.style.color = "blue";
+        }
+        buttonTwo.addEventListener("click", changeSubHeader);
 
         // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName("li");
 
         // TODO: Set text color on every other list item to grey
-        for (var i = 0; i < listItems.length; i++) {
-            if (i % 2 !== 0) {
-                listItems[i].style.color = "grey";
+        var buttonThree = document.getElementById("btn3")
+        var changeListItems = function (event) {
+            for (var i = 0; i < listItems.length; i++) {
+                if (i % 2 !== 0) {
+                    listItems[i].style.color = "grey";
+                }
             }
         }
+        buttonThree.addEventListener("click", changeListItems);
 
         // TODO: Set text color of li with dbid = 1 to blue
-        listItems[0].style.color = "blue";
+        var buttonFour = document.getElementById("btn4")
+        var changedbId = function (event) {
+            // listItems[0].style.color = "blue";
 
-        // for (var j = 0; j < listItems.length; j++) {
-        //     var dbid = listItems[j].getAttribute("data-dbid");
-        //     if (dbid === "1") {
-        //         listItems[j].style.color = "blue";
-        //     }
-        // }
+            for (var j = 0; j < listItems.length; j++) {
+                var dbid = listItems[j].getAttribute("data-dbid");
+                if (dbid === "1") {
+                    listItems[j].style.color = "blue";
+                }
+            }
+        }
+        buttonFour.addEventListener("click", changedbId);
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName("sub-paragraph");
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerHTML = "Mission Accomplished";
+        var buttonFive = document.getElementById("btn5")
+        var changeSubParagraph = function (event) {
+            subParagraphs[0].innerHTML = "Mission Accomplished";
+        }
+        buttonFive.addEventListener("click", changeSubParagraph);
 
     })();
 </script>
