@@ -1,16 +1,62 @@
+/*--------------------Clients: Style Guide --------------------*/
+
+:root {
+    /*---------- color descriptions by: colorhexa.com ----------*/
+
+    --bright-red: #E6563B;
+    --bright-orange: #DEA03D;
+    --desaturated-dark-lime-green: #7CB06C;
+    --dark-cyan: #00ABA9;
+    --very-light-gray: #F0F0F0;
+    --light-gray: #E6E6E6;
+
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: "Anton", sans-serif;
+}
+
+h1 {
+    font-size: 64px;
+}
+
+h2 {
+    font-size: 48px;
+}
+
+h3 {
+    font-size: 40px;
+}
+
+h4 {
+    font-size: 32px;
+}
+
+h5 {
+    font-size: 28px;
+}
+
+p {
+    font-family: "Abel", sans-serif;
+}
+
+#logo {
+    height: 105px;
+    width: 105px;
+}
+
+#icons {
+    height: 18px;
+    width: 18px;
+}
+/*--------------------Clients: Style Guide (end) --------------------*/
 
 /* --------------- Start: X-Small Devices --------------- */
 
-
 body {
-    background: #F0F0F0;
+    background-color: var(--light-gray);
     height: 100vh;
     width: 100vw;
-    /*background: #F0F0F0;*/
-    /*margin: 0;*/
-    /*padding: 0;*/
-    /*font-family: 'Abel', sans-serif;*/
-    /*font-family: 'Anton', sans-serif;*/
 }
 
 /* --- Everything within the Nav --- */
@@ -28,19 +74,15 @@ body {
     justify-content: center;
     align-items: center;
     background: white;
-    height: 98px;
+    height: 50px;
     width: 100%;
 }
 
-#logo {
-    height: 200px;
-    width: 200px;
-}
-
-h1.codeupdesign {
+p.codeupdesign {
     font-family: 'Abel', sans-serif;
-    font-size: 3.5em;
+    font-size: 40px;
     text-align: center;
+    margin: 0;
 }
 
 ul.nav {
@@ -52,57 +94,61 @@ ul.nav {
 nav a.nav-link {
     color: black;
     font-family: 'Abel', sans-serif;
-    font-size: 21px;
-    padding: 10px;
+    font-size: 16px;
+    padding: 5px;
 }
 
 nav a.nav-link:hover {
-    color: blue;
+    color: var(--dark-cyan);
 }
 
 /* --- Everything within the Main --- */
 
-h1.visual-design {
-    font-family: 'Anton', sans-serif;
-    font-size: 3.8em;
-    text-align: center;
-    padding: 5px;
-}
-
-h4.city {
-    font-family: 'Anton', sans-serif;
-    font-size: 2.5em;
+.visual-design {
     text-align: center;
 }
 
-.circles .btn {
-    height: 175px;
-    width: 175px;
+.city {
+    text-align: center;
+}
+
+div.circles {
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+}
+
+div.circles > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    width: 120px;
     border-radius: 50%;
-    border: 10px solid white;
+    border: 7px solid white;
     margin: 5px 10px;
-    font-weight: bold;
     font-family: 'Anton', sans-serif;
+    font-size: 24px;
 }
 
 #designButton {
-    background: #E6563B;
-    color: white;
+    background-color: var(--bright-red);
+    color: var(--very-light-gray);
 }
 
 #developButton {
-    background: #dea03d;
-    color: white;
+    background-color: var(--bright-orange);
+    color: var(--very-light-gray);
 }
 
 #supportButton {
-    background: #7cb06c;
-    color: white;
+    background-color: var(--desaturated-dark-lime-green);
+    color: var(--very-light-gray);
 }
 
 #hostButton {
-    background: #00aba9;
-    color: white;
+    background-color: var(--dark-cyan);
+    color: var(--very-light-gray);
 }
 
 #selectedWork {
