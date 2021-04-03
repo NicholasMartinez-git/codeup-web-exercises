@@ -821,3 +821,8 @@ const book = {
 function getPrice(object) {
     return object.price;
 }
+
+// Exercise 90
+function getBookAuthor(object) {
+    return object.author;
+}
