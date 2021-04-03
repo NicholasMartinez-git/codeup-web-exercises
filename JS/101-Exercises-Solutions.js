@@ -854,3 +854,12 @@ const books = [
 function getNumberOfBooks(books) {
     return books.length;
 }
+
+// Exercise 92
+function totalOfBookPrices(books) {
+    var sum = 0;
+    for (var i = 0; i < books.length; i++) {
+        sum = sum + books[i].price;
+    }
+    return sum;
+}
