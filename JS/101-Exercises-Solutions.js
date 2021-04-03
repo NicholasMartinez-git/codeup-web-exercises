@@ -863,3 +863,15 @@ function totalOfBookPrices(books) {
     }
     return sum;
 }
+
+// Exercise 93
+function getAverageBookPrice(books) {
+    var sum = 0;
+
+    for (var i = 0; i < books.length; i++) {
+        sum = sum + books[i].price;
+    }
+    var average = sum / books.length;
+
+    return average;
+}
