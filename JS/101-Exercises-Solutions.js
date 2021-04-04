@@ -875,3 +875,13 @@ function getAverageBookPrice(books) {
 
     return average;
 }
+
+// Exercise 94
+
+function mostExpensive(books) {
+    return books.sort((a, b) => b.price - a.price);
+}
+
+function highestPriceBook(books) {
+    return mostExpensive(books)[0];
+}
