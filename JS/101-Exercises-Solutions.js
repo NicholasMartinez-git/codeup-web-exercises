@@ -879,9 +879,7 @@ function getAverageBookPrice(books) {
 // Exercise 94
 
 function mostExpensive(books) {
-    return books.sort((a, b) => b.price - a.price);
+    books.sort((a, b) => b.price - a.price);
+    return books[0];
 }
 
-function highestPriceBook(books) {
-    return mostExpensive(books)[0];
-}
