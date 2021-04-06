@@ -2,10 +2,12 @@
 
 $(document).ready(function() {
 
-    var companyName = $('#company-name').html();
-    alert(companyName);
+    var codeup = $('.codeup').html();
+    alert(codeup);
 
     var footer =$('#footer').html();
     alert(footer);
+
+    $('.codeup').css('border', '1px solid #F00')
 
 });
