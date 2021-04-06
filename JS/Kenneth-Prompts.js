@@ -98,3 +98,11 @@ function printRecipe(object) {
 // convertAddressToObject('8626 Sunny Oaks') // {streetNumber: '8646', streetName: 'Sunny Oaks'}
 // convertAddressToObject('5408 Villa Nueva') // {streetNumber: '5408', streetName: 'Villa Nueva'}
 // Collapse
+
+function convertAddressToObject(string) {
+    var address = string.split(" ")
+    return {
+        streetNumber: address[0],
+        streetName: address[1] + " " + address[2]
+    };
+}
