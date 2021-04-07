@@ -12,9 +12,9 @@ console.log($("#best-seller-cont").html()); //GET the html at this id (#)
 var html = "";
 
 html += "<h4 class=\"best-seller-header\">Our Top Sellers</h4>";
-html += "<ol><li>Fedora Hats</li>";
-html += "<li>Baseball Hats</li>";
-html += "<li>Cowboy Hats</li></ol>";
+html += "<ol><li class='hat-sold'>Fedora Hats</li>";
+html += "<li class='hat-sold'>Baseball Hats</li>";
+html += "<li class='hat-sold'>Cowboy Hats</li></ol>";
 
 // html ="<h4 class=\"best-seller-header\">Our Top Sellers</h4>" +
 //     "<ol><li>Fedora Hats</li>" +
@@ -73,10 +73,18 @@ $("*").click(function(e){
 //Bonus activity:
 
 //TODO: Create a variable to store HTML - use jQuery to get the entire nav element's inner HTML. Console.log your variable to confirm the contents.
+var storeHTML = "";
+
+storeHTML = $("nav").html();
+console.log(storeHTML);
 
 //TODO: Remove the class of bg-dark and navbar-dark from the <nav> with jQuery.
 
+$("nav").removeClass("bg-dark navbar-dark");
+
 //TODO: Add the class of navbar-light and bg-info from the <nav> with jQuery.
+
+$("nav").addClass("navbar-light bg-info");
 
 //TODO: Finally, create the following - add your own button somewhere on the navbar. Add an event that will toggle the navbar between bg-dark/navbar-dark and bg-info/navbar-light respectively
 
@@ -87,19 +95,30 @@ $("*").click(function(e){
 //traversing
 
 //.each() - iterate over each matched element to do some stuff
-//TODO: Let's change the last two lis of the class .hat-sold to "Baseball hats" as well
+//TODO: Let's change the last two lis of the class .hat-sold to "Fedora hats" as well
+$(".hat-sold").each(function (index, ele) {
+   if (index !== 0) {
+       $(ele).html("Fedora hats");
+   }
+});
 
 //.first()
 //TODO: Let's change the first list item in the class of .hat-sold from "Baseball hats" to "Porkpie hats"
+$(".hat-sold").first().html("Porkpie hats")
 
 //.last()
 //TODO Together: Let's change the last li in the class of .hat-sold to be Fancy hats - italicized! ! !
+$(".hat-sold").last().html("<em>Fancy hats</em>")
 
 //.parent()
 //TODO: Let's pop up the tree to the parent (<ol>) and use .css to change the list-style-type
+$(".hat-sold").parent().css("list-style-type", "upper-roman");
 
 //.children()
 //TODO Together: What ID would I need to target to see all of the HTML, as children, that we've been manipulating so far?
 
+console.log($("#best-seller-cont").children())
+
 //.next()
 //TODO: Let's slide across branches (sibling to sibling) on our tree and change the HTML within the ordered list we find there to only show Top Hats! !
+console.log($(".best-seller-header").next().html("<li>Top Hat</li>"))
