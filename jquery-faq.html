@@ -7,6 +7,9 @@
         .invisible {
             visibility: hidden;
         }
+        .highlighted {
+            background-color: yellow;
+        }
     </style>
 </head>
 <body>
@@ -56,6 +59,11 @@
         $('#heat').click(function(e) {
             e.preventDefault();
             $("dd").toggleClass('invisible');
+        });
+
+        $('dt').click(function(e) {
+            e.preventDefault();
+            $(this).toggleClass('highlighted');
         });
     });
     </script>
