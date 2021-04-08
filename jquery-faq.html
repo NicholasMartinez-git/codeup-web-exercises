@@ -13,6 +13,9 @@
         .bold {
             font-weight: bold;
         }
+        .blue {
+            color: blue;
+        }
     </style>
 </head>
 <body>
@@ -95,8 +98,17 @@
 
         $('button').click(function(e) {
             e.preventDefault();
-            $("ul").children(":last-child").toggleClass("bold");
+            $("ul").children(":last-child").toggleClass("highlighted");
+        });
 
+        $('.national-parks-heading').click(function(e) {
+            e.preventDefault();
+            $(this).next().toggleClass('bold');
+        });
+
+        $('li').click(function(e) {
+            e.preventDefault();
+            $(this).parent().children(":first-child").toggleClass("blue");
         });
     });
     </script>
