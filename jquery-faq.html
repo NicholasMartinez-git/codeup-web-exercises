@@ -19,6 +19,14 @@
     </style>
 </head>
 <body>
+
+    <h2>Register for this site!</h2>
+
+    <div>
+        <h1>Would you like to sign up for our newsletter?</h1>
+        <span>x</span>
+    </div>
+
     <p>10 FAQs about national parks</p>
 
     <dl>
@@ -86,6 +94,8 @@
     "use strict";
 
     $(document).ready(function() {
+        $("ul").hide()
+
         $('#heat').click(function(e) {
             e.preventDefault();
             $("dd").toggleClass('invisible');
@@ -110,6 +120,18 @@
             e.preventDefault();
             $(this).parent().children(":first-child").toggleClass("blue");
         });
+
+        $('span').click(function(e) {
+            e.preventDefault();
+            $(this).parent().hide();
+        });
+
+        $('h3').click(function(e) {
+            e.preventDefault();
+            $(this).next().toggle();
+        });
+
+        $("h2").hide().delay(8000).fadeIn("linear");
     });
     </script>
 </body>
