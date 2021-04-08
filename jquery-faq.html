@@ -10,6 +10,9 @@
         .highlighted {
             background-color: yellow;
         }
+        .bold {
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -72,6 +75,7 @@
     </ul>
 
     <a href="#" id="heat">Click to show text.</a>
+    <button type="submit">Click to bold last li</button>
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -87,6 +91,12 @@
         $('dt').click(function(e) {
             e.preventDefault();
             $(this).toggleClass('highlighted');
+        });
+
+        $('button').click(function(e) {
+            e.preventDefault();
+            $("ul").children(":last-child").toggleClass("bold");
+
         });
     });
     </script>
