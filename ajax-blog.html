@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax blog</title>
+
+    <style>
+        strong {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="posts"></div>
+    <button id="refresh" type="submit">Refresh</button>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script>
+
+    function generateBlogs(){
+
+        var blogPosts = $.ajax("data/blog.json");
+
+        blogPosts.done(function(data){
+
+            $.each(data, function(index, post){
+                var content = "";
+                content += "<h1>" + post.title + "</h1>"
+                content += "<p><strong>Content:</strong> " + post.content + "</p>"
+                content += "<p><strong>Categories:</strong> " + post.categories.join(", ") + "</p>"
+                content += "<p><strong>Date:</strong> " + post.date + "</p>"
+                console.log(content);
+                $('#posts').append(content);
+            });
+        });
+
+        blogPosts.fail(function(){
+            $('#posts').append("<h1>Error getting blog posts! :(</h1>")
+        })
+    }
+
+    generateBlogs();
+
+    $('#refresh').click(function(e){
+        console.log("Refresh button was clicked.");
+        $('#posts').html('');
+        generateBlogs();
+    });
+</script>
+</body>
+</html>

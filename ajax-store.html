@@ -47,7 +47,7 @@
     //             its contents and fields
     //       HINT: You will want to target #insertProducts for your new HTML elements
     function generateTools(){
-        var toolRequest = $.ajax("data/inventory.json")
+        var toolRequest = $.ajax("data/inventory.json");
 
         toolRequest.done(function(data){
 
@@ -60,7 +60,7 @@
         });
 
         toolRequest.fail(function(){
-            $('#insertProducts').append("<h1>Error getting books! :(</h1>")
+            $('#insertProducts').append("<h1>Error getting books! :(</h1>");
         })
     }
 
