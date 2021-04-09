@@ -9,22 +9,35 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
 
+<!--Custom CSS below-->
+
 </head>
 <body>
 
-
-<div id='map' style='width: 400px; height: 300px;'></div>
+<div id='map' style='width: 450px; height: 450px;'></div>
 
 <script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
 <script>
     console.log(mapBoxToken);
-    mapboxgl.accessToken = 'pk.eyJ1Ijoibmlja210bno0MiIsImEiOiJja25ham1qMHEwcHprMnVtbGw1Z2Z1NXhiIn0.05IyI0fn5IfT4Wv7rp5JOQ';
+    mapboxgl.accessToken = mapBoxToken;
     var map = new mapboxgl.Map({
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
-        center: [-74.5, 40], // starting position [lng, lat]
-        zoom: 9 // starting zoom
+        center: [-98.47966, 29.49597], // starting position [lng, lat]
+        zoom: 15 // starting zoom
     });
+
+    var marker = new mapboxgl.Marker({color: "rebeccapurple", draggable: true})
+        .setLngLat([-98.47966, 29.49597])
+        .addTo(map)
+
+    var popUp = new mapboxgl.Popup()
+        .setLngLat([-98.47966, 29.49597])
+        .setHTML("Piatti is Epic")
+        .addTo(map)
+
+    marker.setPopup(popUp)
 </script>
 
 </body>
