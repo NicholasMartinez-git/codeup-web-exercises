@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+</head>
+<body>
+
+<h1>My Tool Store</h1>
+
+<table id="products">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Categories</th>
+        </tr>
+    </thead>
+    <tbody id="insertProducts"></tbody>
+</table>
+
+<button id="refresh" type="submit">Refresh</button>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script>
+(function() {
+    "use strict";
+    // TODO: Create an AJAX GET request for the file under data/inventory.json
+    var inventoryData = $.ajax("data/inventory.json")
+
+    $.ajax(inventoryData).done(function(data) {
+        console.log("Success!")
+    }).fail(function(jqXhr) {
+        console.log("Error: Check your file path.");
+    }).always(function() {
+        console.log("Looking through inventory!");
+    });
+
+    // TODO: Take the data from inventory.json and append it to the products table
+    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+    //             its contents and fields
+    //       HINT: You will want to target #insertProducts for your new HTML elements
+    function generateTools(){
+        var toolRequest = $.ajax("data/inventory.json")
+
+        toolRequest.done(function(data){
+
+            $.each(data, function(index, tool){
+                var content = "";
+                content += "<tr><td>" + tool.title + "</td>" + " " + "<td>" + tool.quantity + "</td>" + " " + "<td>$" + tool.price.toFixed(2) + "</td>" + " " + "<td>" + tool.categories + "</td></tr>"
+                console.log(content);
+                $('#insertProducts').append(content);
+            });
+        });
+
+        toolRequest.fail(function(){
+            $('#insertProducts').append("<h1>Error getting books! :(</h1>")
+        })
+    }
+
+    generateTools();
+
+    $('#refresh').click(function(e){
+        console.log("Refresh button was clicked.");
+        $('#insertProducts').html('');
+        generateTools();
+    });
+
+})();
+</script>
+
+</body>
+</html>
