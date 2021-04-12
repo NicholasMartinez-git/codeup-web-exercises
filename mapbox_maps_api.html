@@ -25,19 +25,47 @@
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
         center: [-98.47966, 29.49597], // starting position [lng, lat]
-        zoom: 15 // starting zoom
+        zoom: 3 // starting zoom
     });
 
-    var marker = new mapboxgl.Marker({color: "rebeccapurple", draggable: true})
-        .setLngLat([-98.47966, 29.49597])
-        .addTo(map)
+    var favoriteRestaurants = [
+        {
+            name: "Piatti",
+            address: "255 E Basse Rd, Suite 500 San Antonio, TX 78209",
+            foodType: "Italian",
+            favoriteDish: "img/piatti-food.jpeg"
+        },
+        {
+            name: "Panchito's",
+            address: "4100 McCullough Ave, San Antonio, TX 78212",
+            foodType: "Mexican",
+            favoriteDish: "img/panchitos-food.jpeg"
+        },
+        {
+            name: "Gordan Ramsey Burger",
+            address: "3667 S Las Vegas Blvd, LAs Vegas, NV 89109",
+            foodType: "American",
+            favoriteDish: "img/gordan-ramsey-burger.png"
+        }
+    ];
 
-    var popUp = new mapboxgl.Popup()
-        .setLngLat([-98.47966, 29.49597])
-        .setHTML("Piatti is Epic")
-        .addTo(map)
+    favoriteRestaurants.forEach(locate);
 
-    marker.setPopup(popUp)
+    function locate(obj) {
+        geocode(obj.address, mapBoxToken).then(function (results) {
+
+            var popup = new mapboxgl.Popup()
+                .setHTML("<h4>" + obj.name + "</h4>")
+
+            var marker = new mapboxgl.Marker({color: "rebeccapurple", draggable: true})
+                .setLngLat(results)
+                .setPopup(popup)
+                .addTo(map)
+
+            map.setCenter(results)
+        })
+    }
+
 </script>
 
 </body>
