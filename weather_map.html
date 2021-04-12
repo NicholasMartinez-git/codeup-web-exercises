@@ -10,6 +10,7 @@
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/weather_map.css">
 
     <title></title>
 </head>
@@ -29,6 +30,9 @@
     <li>To add mapbox autocomplete search, you will need to include geocoder scripts from mapbox</li>
 </ul>
 
+<div id='map' style='width: 450px; height: 450px;'></div>
+<pre id="coordinates"></pre>
+
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -39,12 +43,58 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+<!--Mapbox CDN below-->
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+
+<!--Keys & Mapbox-->
 <script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
 
 <script>
     $(document).ready(function () {
 
         "use strict";
+
+        mapboxgl.accessToken = mapBoxToken;
+        var map = new mapboxgl.Map({
+            container: 'map', // container ID
+            style: 'mapbox://styles/mapbox/streets-v11', // style URL
+            center: [-98.47966, 29.49597], // starting position [lng, lat]
+            zoom: 7 // starting zoom
+        });
+
+        var markerLocations = [
+            {
+                name: "",
+                address: "",
+                hoursOfOperation: "",
+                phone: "",
+                website: ""
+            }
+        ]
+        console.log(markerLocations);
+
+        // Finds coordinates on click
+        map.on("click", function(e) {
+            console.log(e.lngLat);
+        })
+
+        function locate(obj) {
+            geocode(obj.address, mapBoxToken).then(function (results) {
+
+                var popup = new mapboxgl.Popup()
+                    .setHTML("<h4>" + obj.name + "</h4>")
+
+                new mapboxgl.Marker({color: "rebeccapurple", draggable: true})
+                    .setLngLat(results)
+                    .setPopup(popup)
+                    .addTo(map)
+
+                map.setCenter(results)
+            })
+        }
 
 
         // GET REQUEST to OpenWeatherMap using city parameter
