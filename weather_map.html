@@ -31,7 +31,7 @@
 </ul>
 
 <div id='map' style='width: 450px; height: 450px;'></div>
-<pre id="coordinates"></pre>
+<div id="geocoder" class="geocoder"></div>
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -43,10 +43,15 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
-<!--Mapbox CDN below-->
 
+<!--Mapbox CDN below-->
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css" type="text/css">
+<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
 
 <!--Keys & Mapbox-->
 <script src="js/keys.js"></script>
@@ -65,6 +70,16 @@
             zoom: 7 // starting zoom
         });
 
+        var geocoder = new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            mapboxgl: mapboxgl
+        });
+
+        // var searchPopup = new mapboxgl.Popup()
+        //     .setHTML(results)
+
+        $('#geocoder').append(geocoder.onAdd(map));
+
         var markerLocations = [
             {
                 name: "",
@@ -77,28 +92,47 @@
         console.log(markerLocations);
 
         // Finds coordinates on click
-        map.on("click", function(e) {
-            console.log(e.lngLat);
+        map.on("contextmenu", function(e) {
+            console.log(e.lngLat)
+            located(e.lngLat);
         })
 
-        function locate(obj) {
-            geocode(obj.address, mapBoxToken).then(function (results) {
+        function located(input) {
+            console.log(input);
+
+            var marker = new mapboxgl.Marker({color: "rebeccapurple", draggable: true})
+                .setLngLat(input)
+                .addTo(map)
+
+            $.get("https://api.openweathermap.org/data/2.5/onecall", {
+                lat: input.lat,
+                lon: input.lng,
+                units: "imperial",
+                exclude: "current,minutely,hourly,alerts",
+                appid: OPEN_WEATHER_APPID
+            }).done(function (results) {
+                console.log(results)
+            })
+
+            reverseGeocode(input , mapBoxToken).then(function (results) {
+                console.log(results);
 
                 var popup = new mapboxgl.Popup()
-                    .setHTML("<h4>" + obj.name + "</h4>")
+                    .setHTML(results)
 
-                new mapboxgl.Marker({color: "rebeccapurple", draggable: true})
-                    .setLngLat(results)
-                    .setPopup(popup)
-                    .addTo(map)
-
-                map.setCenter(results)
+                marker.setPopup(popup);
             })
         }
 
-
         // GET REQUEST to OpenWeatherMap using city parameter
         // https://openweathermap.org/current
+
+        // api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
+        // $.get("https://api.openweathermap.org/data/2.5/forecast", {
+        //     lat: "",
+        //     lon: "",
+        //     appid: OPEN_WEATHER_APPID
+        // })
 
         // $.get("https://api.openweathermap.org/data/2.5/weather", {
         //     appid: OPEN_WEATHER_APPID, //enter your key here
