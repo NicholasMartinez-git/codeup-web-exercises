@@ -49,15 +49,15 @@
         "use strict";
 
         mapboxgl.accessToken = mapBoxToken;
-        var map = new mapboxgl.Map({
+        const map = new mapboxgl.Map({
             container: 'map', // container ID
             style: 'mapbox://styles/mapbox/streets-v11', // style URL
             center: [-98.47966, 29.49597], // starting position [lng, lat]
-            zoom: 7 // starting zoom
+            zoom: 8 // starting zoom
         });
 
         // When the user inputs an address it sets a marker with the address at the coordinates of the input.
-        var geocoder = new MapboxGeocoder({
+        const geocoder = new MapboxGeocoder({
             accessToken: mapboxgl.accessToken,
             mapboxgl: mapboxgl,
             marker: false
@@ -66,16 +66,34 @@
         $('#geocoder').append(geocoder.onAdd(map));
 
         geocoder.on("result", function (result) {
-            var address = result.result.place_name;
-            geocode(address, mapBoxToken).then(function (results) {
-                var inputMarker = new mapboxgl.Marker({color: "rebeccapurple", draggable: true})
-                    .setLngLat(results)
-                    .addTo(map)
+            console.log(result)
+            let address = result.result.place_name;
+            $.get("https://api.openweathermap.org/data/2.5/onecall", {
+                lat: result.result.geometry.coordinates[1],
+                lon: result.result.geometry.coordinates[0],
+                units: "imperial",
+                exclude: "minutely,hourly,alerts",
+                appid: OPEN_WEATHER_APPID
+            }).done(function (results) {
+                console.log(results)
+                let iconCode = results.current.weather[0].icon
+                let tempData = results.current.temp
+                let iconUrl = "https://openweathermap.org/img/w/" + iconCode + ".png"
 
-                var popup = new mapboxgl.Popup()
-                    .setHTML(address)
+                geocode(address, mapBoxToken).then(function (results) {
+                    console.log(results)
+                    let iconImg = "<img src='" + iconUrl + "'>"
 
-                inputMarker.setPopup(popup);
+                    let inputMarker = new mapboxgl.Marker({color: "rebeccapurple", draggable: true})
+                        .setLngLat(results)
+                        .addTo(map)
+
+                    let popup = new mapboxgl.Popup()
+                        .setHTML(iconImg + " " + tempData.toFixed(0) + "&deg;")
+                        // .setHTML("hello")
+
+                    inputMarker.setPopup(popup);
+                })
             })
         })
 
@@ -87,7 +105,7 @@
 
         function located(input) {
 
-            var marker = new mapboxgl.Marker({color: "rebeccapurple", draggable: true})
+            let marker = new mapboxgl.Marker({color: "rebeccapurple", draggable: true})
                 .setLngLat(input)
                 .addTo(map)
 
@@ -95,60 +113,24 @@
                 lat: input.lat,
                 lon: input.lng,
                 units: "imperial",
-                exclude: "current,minutely,hourly,alerts",
+                exclude: "minutely,hourly,alerts",
                 appid: OPEN_WEATHER_APPID
             }).done(function (results) {
-                console.log("5 day forecast", results)
-            })
+                console.log(results)
+                let iconCode = results.current.weather[0].icon
+                let tempData = results.current.temp
+                let iconUrl = "https://openweathermap.org/img/w/" + iconCode + ".png"
 
-            reverseGeocode(input , mapBoxToken).then(function (results) {
+                reverseGeocode(input , mapBoxToken).then(function (results) {
+                    let iconImg = "<img src='" + iconUrl + "'>"
 
-                var popup = new mapboxgl.Popup()
-                    .setHTML(results)
+                    let popup = new mapboxgl.Popup()
+                        .setHTML(iconImg + " " + tempData.toFixed(0) + "&deg;")
 
-                marker.setPopup(popup);
+                    marker.setPopup(popup);
+                })
             })
         }
-
-        // GET REQUEST to OpenWeatherMap using city parameter
-        // https://openweathermap.org/current
-
-        // api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
-        // $.get("https://api.openweathermap.org/data/2.5/forecast", {
-        //     lat: "",
-        //     lon: "",
-        //     appid: OPEN_WEATHER_APPID
-        // })
-
-        // $.get("https://api.openweathermap.org/data/2.5/weather", {
-        //     appid: OPEN_WEATHER_APPID, //enter your key here
-        //     q:     "San Antonio, US",
-        //     units: "imperial"
-        // }).done(function (results) {
-        //     console.log(results);
-        // });
-
-        // $.get("https://api.openweathermap.org/data/2.5/weather", {
-        //     appid: OPEN_WEATHER_APPID, //enter your key here
-        //     lat: 29.423017,
-        //     lon: -98.48527,
-        //     units: "imperial"
-        // }).done(function (results) {
-        //     console.log(results);
-        // });
-
-        // $.get("https://api.openweathermap.org/data/2.5/onecall", {
-        //     appid: OPEN_WEATHER_APPID, //enter your key here
-        //     lat: 29.423017,
-        //     lon: -98.48527,
-        //     units: "imperial",
-        //     exclude: "current,minutely,hourly,alerts"
-        // }).done(function (results) {
-        //     console.log(results);
-        // });
-
-
-
     });
 </script>
 </body>
