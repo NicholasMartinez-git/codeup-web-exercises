@@ -16,21 +16,7 @@
 </head>
 <body>
 
-<h1>Weather Map Project</h1>
-
-
-<h5>Tips</h5>
-<ul>
-    <li>Take time to plan out your approach for each part of the project</li>
-    <li>Commit along the way. Especially as you are starting new functionality</li>
-    <li>You may utilize the geocoder helper methods from the previous mapbox lesson</li>
-    <li>API Keys should be protected in your keys.js</li>
-    <li>Read the docs!</li>
-    <li>Get your project working, then focus on styling & refactoring</li>
-    <li>To add mapbox autocomplete search, you will need to include geocoder scripts from mapbox</li>
-</ul>
-
-<div id='map' style='width: 450px; height: 450px;'></div>
+<div id='map'></div>
 <div id="geocoder" class="geocoder"></div>
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -70,35 +56,36 @@
             zoom: 7 // starting zoom
         });
 
+        // When the user inputs an address it sets a marker with the address at the coordinates of the input.
         var geocoder = new MapboxGeocoder({
             accessToken: mapboxgl.accessToken,
-            mapboxgl: mapboxgl
+            mapboxgl: mapboxgl,
+            marker: false
         });
-
-        // var searchPopup = new mapboxgl.Popup()
-        //     .setHTML(results)
 
         $('#geocoder').append(geocoder.onAdd(map));
 
-        var markerLocations = [
-            {
-                name: "",
-                address: "",
-                hoursOfOperation: "",
-                phone: "",
-                website: ""
-            }
-        ]
-        console.log(markerLocations);
+        geocoder.on("result", function (result) {
+            var address = result.result.place_name;
+            geocode(address, mapBoxToken).then(function (results) {
+                var inputMarker = new mapboxgl.Marker({color: "rebeccapurple", draggable: true})
+                    .setLngLat(results)
+                    .addTo(map)
 
-        // Finds coordinates on click
+                var popup = new mapboxgl.Popup()
+                    .setHTML(address)
+
+                inputMarker.setPopup(popup);
+            })
+        })
+
+
+        // Finds coordinates on right click, then places a marker on coordinates and displays address for coordinates when clicked.
         map.on("contextmenu", function(e) {
-            console.log(e.lngLat)
             located(e.lngLat);
         })
 
         function located(input) {
-            console.log(input);
 
             var marker = new mapboxgl.Marker({color: "rebeccapurple", draggable: true})
                 .setLngLat(input)
@@ -111,11 +98,10 @@
                 exclude: "current,minutely,hourly,alerts",
                 appid: OPEN_WEATHER_APPID
             }).done(function (results) {
-                console.log(results)
+                console.log("5 day forecast", results)
             })
 
             reverseGeocode(input , mapBoxToken).then(function (results) {
-                console.log(results);
 
                 var popup = new mapboxgl.Popup()
                     .setHTML(results)
