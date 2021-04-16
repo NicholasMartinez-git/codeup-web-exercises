@@ -16,8 +16,52 @@
 </head>
 <body>
 
-<div id='map'></div>
-<div id="geocoder" class="geocoder"></div>
+<!--<div id='map'></div>-->
+<!--<div class="geocoder-container d-flex justify-content-center mt-1">-->
+<!--    <div id="geocoder" class="geocoder"></div>-->
+<!--</div>-->
+
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Enable body scrolling</button>
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop">Enable backdrop (default)</button>
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Enable both scrolling & backdrop</button>
+
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Colored with scrolling</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <p>Try scrolling the rest of the page to see this option in action.</p>
+    </div>
+</div>
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel">Offcanvas with backdrop</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <p>.....</p>
+    </div>
+</div>
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdroped with scrolling</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <p>Try scrolling the rest of the page to see this option in action.</p>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -44,9 +88,12 @@
 <script src="js/mapbox-geocoder-utils.js"></script>
 
 <script>
+
     $(document).ready(function () {
 
         "use strict";
+
+        const enableButton = `<button id="enableOffCanvasBackdrop" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Enable</button>`
 
         mapboxgl.accessToken = mapBoxToken;
         const map = new mapboxgl.Map({
@@ -89,8 +136,8 @@
                         .addTo(map)
 
                     let popup = new mapboxgl.Popup()
-                        .setHTML(iconImg + " " + tempData.toFixed(0) + "&deg;")
-                        // .setHTML("hello")
+                        // .setHTML(iconImg + " " + tempData.toFixed(0) + "&deg;")
+                        .setHTML(enableButton)
 
                     inputMarker.setPopup(popup);
                 })

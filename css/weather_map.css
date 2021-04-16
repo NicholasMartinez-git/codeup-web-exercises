@@ -1,19 +1,7 @@
-* {
-    box-sizing: border-box;
-}
-
-.geocoder {
-    position: absolute;
-    z-index: 1;
-    width: 50%;
-    top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.mapboxgl-ctrl-geocoder {
-    min-width: 100%;
-}
+/** {*/
+/*    box-sizing: border-box;*/
+/*}*/
+/* All the css for the map and search */
 
 #map {
     position: absolute;
@@ -34,3 +22,5 @@ div.mapboxgl-popup-content {
     border-radius: 25%;
     padding: 5px 5px;
 }
+
+/* CSS for the offcanvas scroll backdrop */
