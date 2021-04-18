@@ -1,11 +1,9 @@
-/** {*/
-/*    box-sizing: border-box;*/
-/*}*/
-/* All the css for the map and search */
+
+ /*All the css for the map and search */
 
 #map {
     position: absolute;
-    top: 0;
+    top: 0;git
     bottom: 0;
     width: 100%;
     height: 100%;
