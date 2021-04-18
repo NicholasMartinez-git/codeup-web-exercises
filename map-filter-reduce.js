@@ -47,3 +47,18 @@ let exp = users.reduce(function (prev, cur) {
     return prev + cur.yearsOfExperience;
 }, 0);
 let result = exp / users.length;
+
+// Use .reduce to get the longest email from the list of users.
+let longestString = users.reduce((prev, current) => {
+    if (current.email.length > prev.length) {
+        return current.email;
+    } else {
+        return prev;
+    };
+}, '');
+
+// Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
+let instructorsNames = users.reduce((prev, current) => {
+    prev += `${current.name}, `;
+    return prev;
+}, ``);
