@@ -61,4 +61,8 @@ let longestString = users.reduce((prev, current) => {
 let instructorsNames = users.reduce((prev, current) => {
     prev += `${current.name}, `;
     return prev;
-}, ``);
+}, `instructors are: `).slice(0, -2) + `.`;
+
+// best method
+
+let mapJoinSOlution = `instructors are: ${users.map(user => user.name).join(", ")}.`
