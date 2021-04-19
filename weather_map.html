@@ -20,8 +20,6 @@
     <div id="geocoder" class="geocoder"></div>
 </div>
 
-<!--<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Enable body scrolling</button>-->
-
 <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
     <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Colored with scrolling</h5>
@@ -50,22 +48,6 @@
     </div>
 </div>
 
-<!--<div class="card" style="width: 18rem;">-->
-<!--    <img src="..." class="card-img-top" alt="...">-->
-<!--    <div class="card-body">-->
-<!--        <h5 class="card-title">Card title</h5>-->
-<!--        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-<!--    </div>-->
-<!--    <ul class="list-group list-group-flush">-->
-<!--        <li class="list-group-item">An item</li>-->
-<!--        <li class="list-group-item">A second item</li>-->
-<!--        <li class="list-group-item">A third item</li>-->
-<!--    </ul>-->
-<!--    <div class="card-body">-->
-<!--        <a href="#" class="card-link">Card link</a>-->
-<!--        <a href="#" class="card-link">Another link</a>-->
-<!--    </div>-->
-<!--</div>-->
 
 
 
@@ -113,9 +95,6 @@
         //     <button id="enableOffCanvasBackdrop" class="btn btn-info" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">More Info</button>
         //   </div>
         // </div>`
-
-
-        const enableButton = `<button id="enableOffCanvasBackdrop" class="btn btn-info" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">More Info</button>`
 
         mapboxgl.accessToken = mapBoxToken;
         const map = new mapboxgl.Map({
@@ -196,7 +175,6 @@
                 exclude: "minutely,hourly,alerts",
                 appid: OPEN_WEATHER_APPID
             }).done(function (results) {
-                console.log(results)
                 let iconCode = results.current.weather[0].icon
                 let tempData = results.current.temp
                 let iconUrl = "https://openweathermap.org/img/w/" + iconCode + ".png"
@@ -204,8 +182,20 @@
                 reverseGeocode(input , mapBoxToken).then(function (results) {
                     let iconImg = "<img src='" + iconUrl + "'>"
 
+                    const infoPanelPopup = `
+                    <div class="card" style="width: 15rem;">
+                      <div class="card-body">
+                        <h4>Address:</h4>
+                        <p class="card-text"> ${results} </p>
+                      </div>
+                      <div class="card-body text-center">
+                        <button id="enableOffCanvasBackdrop" class="btn btn-info" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">More Info</button>
+                      </div>
+                    </div>`
+
                     let popup = new mapboxgl.Popup()
-                        .setHTML(iconImg + " " + tempData.toFixed(0) + "&deg;")
+                        // .setHTML(iconImg + " " + tempData.toFixed(0) + "&deg;")
+                        .setHTML(infoPanelPopup)
 
                     marker.setPopup(popup);
                 })
