@@ -15,12 +15,12 @@
 </head>
 <body>
 
-<!--<div id='map'></div>-->
-<!--<div class="geocoder-container d-flex justify-content-center mt-1">-->
-<!--    <div id="geocoder" class="geocoder"></div>-->
-<!--</div>-->
+<div id='map'></div>
+<div class="geocoder-container d-flex justify-content-center mt-1">
+    <div id="geocoder" class="geocoder"></div>
+</div>
 
-<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Enable body scrolling</button>
+<!--<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Enable body scrolling</button>-->
 
 <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
     <div class="offcanvas-header">
@@ -50,7 +50,22 @@
     </div>
 </div>
 
-
+<!--<div class="card" style="width: 18rem;">-->
+<!--    <img src="..." class="card-img-top" alt="...">-->
+<!--    <div class="card-body">-->
+<!--        <h5 class="card-title">Card title</h5>-->
+<!--        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--    </div>-->
+<!--    <ul class="list-group list-group-flush">-->
+<!--        <li class="list-group-item">An item</li>-->
+<!--        <li class="list-group-item">A second item</li>-->
+<!--        <li class="list-group-item">A third item</li>-->
+<!--    </ul>-->
+<!--    <div class="card-body">-->
+<!--        <a href="#" class="card-link">Card link</a>-->
+<!--        <a href="#" class="card-link">Another link</a>-->
+<!--    </div>-->
+<!--</div>-->
 
 
 
@@ -83,8 +98,24 @@
     $(document).ready(function () {
 
         "use strict";
+        // const infoPanelPopup = `
+        // <div class="card" style="width: 18rem;">
+        //   <div class="card-body">
+        //     <h5 class="card-title">Card title</h5>
+        //     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        //   </div>
+        //   <ul class="list-group list-group-flush">
+        //     <li class="list-group-item">An item</li>
+        //     <li class="list-group-item">A second item</li>
+        //     <li class="list-group-item">A third item</li>
+        //   </ul>
+        //   <div class="card-body">
+        //     <button id="enableOffCanvasBackdrop" class="btn btn-info" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">More Info</button>
+        //   </div>
+        // </div>`
 
-        const enableButton = `<button id="enableOffCanvasBackdrop" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Enable</button>`
+
+        const enableButton = `<button id="enableOffCanvasBackdrop" class="btn btn-info" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">More Info</button>`
 
         mapboxgl.accessToken = mapBoxToken;
         const map = new mapboxgl.Map({
@@ -98,7 +129,8 @@
         const geocoder = new MapboxGeocoder({
             accessToken: mapboxgl.accessToken,
             mapboxgl: mapboxgl,
-            marker: false
+            marker: false,
+            zoom: 15
         });
 
         $('#geocoder').append(geocoder.onAdd(map));
@@ -121,14 +153,24 @@
                 geocode(address, mapBoxToken).then(function (results) {
                     console.log(results)
                     let iconImg = "<img src='" + iconUrl + "'>"
+                    const infoPanelPopup = `
+                    <div class="card" style="width: 15rem;">
+                      <div class="card-body">
+                        <h4>Address:</h4>
+                        <p class="card-text"> ${address} </p>
+                      </div>
+                      <div class="card-body text-center">
+                        <button id="enableOffCanvasBackdrop" class="btn btn-info" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">More Info</button>
+                      </div>
+                    </div>`
 
                     let inputMarker = new mapboxgl.Marker({color: "rebeccapurple", draggable: true})
                         .setLngLat(results)
                         .addTo(map)
 
                     let popup = new mapboxgl.Popup()
+                        .setHTML(infoPanelPopup)
                         // .setHTML(iconImg + " " + tempData.toFixed(0) + "&deg;")
-                        .setHTML(enableButton)
 
                     inputMarker.setPopup(popup);
                 })
